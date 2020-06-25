@@ -6,14 +6,6 @@ import RestoreIcon from "@material-ui/icons/Restore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import InformationIcon from "@material-ui/icons/Info";
-const useStyles = makeStyles({
-  root: {
-    position: "fixed",
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
-});
 
 export default function SimpleBottomNavigation() {
   const classes = useStyles();
@@ -35,3 +27,12 @@ export default function SimpleBottomNavigation() {
     </BottomNavigation>
   );
 }
+
+const useStyles = makeStyles({
+  root: {
+    position: "fixed",
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
+});

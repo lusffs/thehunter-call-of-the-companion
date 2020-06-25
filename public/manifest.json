@@ -1,6 +1,6 @@
 {
-  "short_name": "Call of the Companion App",
-  "name": "WebHunter - Call of the Companion",
+  "short_name": "Hunter Companion",
+  "name": "Hunter Companion",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#282c34",
+  "background_color": "#282c34"
 }
