@@ -7,6 +7,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 // import BottomNavigation from "BottomNavigation";
 import Menu from "components/Menu";
 import PageRouter from "components/PageRouter";
+import Footer from "components/Footer";
 import theme from "theme";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         {/* <Header /> */}
         <PageRouter />
         {/* <BottomNavigation /> */}
+        <Footer />
         <Menu />
       </ThemeProvider>
     </Router>
