@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import StartPage from "pages/Start";
+import AnimalsPage from "pages/Animals";
 
 export default function PageRouter() {
   return (
@@ -11,6 +12,9 @@ export default function PageRouter() {
         </Route>
         <Route path="/topics">
           <h1>topics</h1>
+        </Route>
+        <Route path="/animals">
+          <AnimalsPage />
         </Route>
         <Route exact path="/">
           <StartPage />

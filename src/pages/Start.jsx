@@ -67,9 +67,9 @@ export default function Start() {
                       color="primary"
                       variant="contained"
                       component={RouterLink}
-                      to="/about"
+                      to="/animals"
                     >
-                      About
+                      Animals
                     </Button>
                   </Grid>
                 </Grid>
