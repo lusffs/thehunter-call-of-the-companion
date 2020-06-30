@@ -26,13 +26,16 @@ export default function Start() {
           <Grid item xs={12}>
             <Box my={3}>
               <TableContainer component={Paper}>
-                <Table className={classes.table} aria-label="simple table">
+                <Table
+                  className={classes.table}
+                  aria-label="simple table"
+                  size="small"
+                >
                   <TableHead>
                     <TableRow>
                       <TableCell>Name</TableCell>
                       <TableCell align="center">Class</TableCell>
                       <TableCell align="center">Max Level</TableCell>
-
                       <TableCell align="right">
                         <span role="img" aria-label="Diamond">
                           💎 Requirement
@@ -74,18 +77,4 @@ const useStyles = makeStyles(() => ({
     minWidth: "100%",
   },
   noWrap: { whiteSpace: "nowrap" },
-  // hero: {
-  //   backgroundSize: "cover",
-  //   backgroundImage: `url(${backgroundImage})`,
-  //   backgroundRepeat: "no-repeat",
-  //   backgroundPosition: "center",
-  //   backgroundAttachment: "fixed",
-  //   height: "100vh",
-  //   boxShadow: `inset 0 -10px 10px -10px #000000`,
-  //   display: "flex",
-  //   alignItems: "center",
-  //   flexDirection: "column",
-  //   justifyContent: "center",
-  //   textAlign: "center",
-  // },
 }));

@@ -31,48 +31,19 @@ export default function Start() {
           <Grid item>
             <Paper>
               <Box my={3} p={3}>
-                <Typography variant="h4">Welcome to</Typography>
-                <Typography variant="h3">Hunter Companion</Typography>
+                <Typography variant="h4">Hello there</Typography>
+                <Typography variant="h3">Hunter</Typography>
                 <Typography variant="body1">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                  ultrices cursus tellus feugiat pulvinar. Proin sed nunc quis
-                  ligula vestibulum dapibus ac sit amet nisl. Suspendisse
-                  aliquet nibh vel sollicitudin commodo. Donec pharetra eros
-                  lectus, vitae rutrum augue volutpat quis. In ac felis ac dolor
-                  elementum aliquet ornare a tellus. Sed et ultricies ligula.
-                  Nam aliquet varius est, vel tempor est gravida sollicitudin.
+                  The App is currently under development.
                 </Typography>
-                <Typography variant="body2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                  ultrices cursus tellus feugiat pulvinar. Proin sed nunc quis
-                  ligula vestibulum dapibus ac sit amet nisl. Suspendisse
-                  aliquet nibh vel sollicitudin commodo. Donec pharetra eros
-                  lectus, vitae rutrum augue volutpat quis. In ac felis ac dolor
-                  elementum aliquet ornare a tellus. Sed et ultricies ligula.
-                  Nam aliquet varius est, vel tempor est gravida sollicitudin.
-                </Typography>
-                <Grid container>
-                  <Grid item>
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      component={RouterLink}
-                      to="/"
-                    >
-                      Start
-                    </Button>
-                  </Grid>
-                  <Grid item>
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      component={RouterLink}
-                      to="/animals"
-                    >
-                      Animals
-                    </Button>
-                  </Grid>
-                </Grid>
+                <Button
+                  color="primary"
+                  variant="contained"
+                  component={RouterLink}
+                  to="/animals"
+                >
+                  Animals
+                </Button>
               </Box>
             </Paper>
           </Grid>
