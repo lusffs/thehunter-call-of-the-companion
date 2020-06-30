@@ -1,6 +1,7 @@
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import backgroundImage from "background2.jpg";
+import RightHandSwitch from "components/RightHandSwitch";
 import {
   Typography,
   Button,
@@ -44,6 +45,7 @@ export default function Start() {
                 >
                   Animals
                 </Button>
+                <RightHandSwitch />
               </Box>
             </Paper>
           </Grid>

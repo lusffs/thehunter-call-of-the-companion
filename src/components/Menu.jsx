@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import useStore from "global-hook-store";
+import settingsStore from "store/settingsStore";
 import Drawer from "@material-ui/core/Drawer";
 
 import List from "@material-ui/core/List";
@@ -16,6 +18,10 @@ import Fab from "@material-ui/core/Fab";
 export default function TemporaryDrawer() {
   const classes = useStyles();
   const [isOpen, setIsOpen] = React.useState(false);
+
+  const {
+    state: { isRightHanded },
+  } = useStore(settingsStore);
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -51,14 +57,18 @@ export default function TemporaryDrawer() {
   return (
     <>
       <Fab
-        className={classes.button}
+        className={isRightHanded ? classes.button : classes.buttonLeftHanded}
         color="primary"
         aria-label="add"
         onClick={toggleDrawer(true)}
       >
         <MenuIcon />
       </Fab>
-      <Drawer anchor={"left"} open={isOpen} onClose={toggleDrawer(false)}>
+      <Drawer
+        anchor={isRightHanded ? "right" : "left"}
+        open={isOpen}
+        onClose={toggleDrawer(false)}
+      >
         {list()}
       </Drawer>
     </>
@@ -73,5 +83,10 @@ const useStyles = makeStyles(({ spacing }) => ({
     position: "fixed",
     bottom: spacing(2),
     right: spacing(2),
+  },
+  buttonLeftHanded: {
+    position: "fixed",
+    bottom: spacing(2),
+    left: spacing(2),
   },
 }));
