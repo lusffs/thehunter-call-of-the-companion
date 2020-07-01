@@ -10,11 +10,15 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import Fab from "@material-ui/core/Fab";
+import IconButton from "@material-ui/core/IconButton";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core";
 
-export default function TemporaryDrawer() {
+export default function Menu() {
   const classes = useStyles();
   const [isOpen, setIsOpen] = React.useState(false);
-
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const {
     state: { isRightHanded },
   } = useStore(settingsStore);
@@ -52,16 +56,28 @@ export default function TemporaryDrawer() {
 
   return (
     <>
-      <Fab
-        className={isRightHanded ? classes.button : classes.buttonLeftHanded}
-        color="primary"
-        aria-label="add"
-        onClick={toggleDrawer(true)}
-      >
-        <MenuIcon />
-      </Fab>
+      {matches ? (
+        <Fab
+          className={isRightHanded ? classes.button : classes.buttonLeftHanded}
+          color="primary"
+          aria-label="add"
+          onClick={toggleDrawer(true)}
+        >
+          <MenuIcon />
+        </Fab>
+      ) : (
+        <IconButton
+          edge="start"
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="menu"
+          onClick={toggleDrawer(true)}
+        >
+          <MenuIcon />
+        </IconButton>
+      )}
       <Drawer
-        anchor={isRightHanded ? "right" : "left"}
+        anchor={isRightHanded && matches ? "right" : "left"}
         open={isOpen}
         onClose={toggleDrawer(false)}
       >
@@ -74,6 +90,9 @@ export default function TemporaryDrawer() {
 const useStyles = makeStyles(({ spacing }) => ({
   list: {
     width: 250,
+  },
+  menuButton: {
+    marginRight: spacing(2),
   },
   button: {
     position: "fixed",

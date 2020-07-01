@@ -3,14 +3,11 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Settings from "components/Settings";
-
-const useStyles = makeStyles(() => ({
-  grow: {
-    flexGrow: 1,
-  },
-}));
+import { Link as RouterLink } from "react-router-dom";
+import Menu from "components/Menu";
 
 export default function Header() {
   const classes = useStyles();
@@ -20,13 +17,26 @@ export default function Header() {
       <AppBar position="fixed">
         <Container disableGutters maxWidth="md">
           <Toolbar>
-            <Typography variant="h6">Hunter Companion</Typography>
+            <Menu />
+            <Link
+              underline="none"
+              color="textPrimary"
+              component={RouterLink}
+              to="/"
+            >
+              <Typography variant="h6">Hunter Companion</Typography>
+            </Link>
             <div className={classes.grow} />
             <Settings />
           </Toolbar>
         </Container>
       </AppBar>
-      {/* <Toolbar /> */}
     </>
   );
 }
+
+const useStyles = makeStyles(() => ({
+  grow: {
+    flexGrow: 1,
+  },
+}));

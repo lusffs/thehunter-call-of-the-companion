@@ -6,13 +6,16 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core";
 import SettingsIcon from "@material-ui/icons/Settings";
 import RightHandSwitch from "components/RightHandSwitch";
 import WeightSwitch from "components/WeightSwitch";
+
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
-
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -33,11 +36,15 @@ export default function FormDialog() {
       >
         <DialogTitle id="form-dialog-title">Settings</DialogTitle>
         <DialogContent>
-          <RightHandSwitch />
-          <DialogContentText>
-            This will move the entire menu and corresponding button to the right
-            if enabled.
-          </DialogContentText>
+          {matches && (
+            <>
+              <RightHandSwitch />
+              <DialogContentText>
+                This will move the entire menu and corresponding button to the
+                right if enabled.
+              </DialogContentText>
+            </>
+          )}
           <WeightSwitch />
           <DialogContentText>Weight in kg instead of lbs</DialogContentText>
         </DialogContent>

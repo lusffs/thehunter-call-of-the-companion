@@ -1,9 +1,8 @@
 import React from "react";
 import Switch from "@material-ui/core/Switch";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import useStore from "global-hook-store";
 import settingsStore from "store/settings";
+import { Typography, Grid } from "@material-ui/core";
 
 export default function RightHandSwitch() {
   const {
@@ -16,17 +15,18 @@ export default function RightHandSwitch() {
   };
 
   return (
-    <FormGroup>
-      <FormControlLabel
-        control={
+    <Typography component="div">
+      <Grid component="label" container alignItems="center" spacing={1}>
+        <Grid item>Left</Grid>
+        <Grid item>
           <Switch
             checked={isRightHanded}
             onChange={toggleChecked}
             color="secondary"
           />
-        }
-        label="Right hand mode"
-      />
-    </FormGroup>
+        </Grid>
+        <Grid item>Right</Grid>
+      </Grid>
+    </Typography>
   );
 }
