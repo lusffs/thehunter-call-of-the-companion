@@ -7,12 +7,12 @@ import settingsStore from "store/settings";
 
 export default function RightHandSwitch() {
   const {
-    state: { isRightHanded },
-    actions: { toggleRightHanded },
+    state: { useKiloWeightUnit },
+    actions: { toggleWeightUnit },
   } = useStore(settingsStore);
 
   const toggleChecked = () => {
-    toggleRightHanded();
+    toggleWeightUnit();
   };
 
   return (
@@ -20,12 +20,12 @@ export default function RightHandSwitch() {
       <FormControlLabel
         control={
           <Switch
-            checked={isRightHanded}
+            checked={useKiloWeightUnit}
             onChange={toggleChecked}
             color="secondary"
           />
         }
-        label="Right hand mode"
+        label="Use kg"
       />
     </FormGroup>
   );
