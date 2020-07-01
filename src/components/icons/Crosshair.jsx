@@ -1,11 +1,6 @@
 import React from "react";
 import { SvgIcon } from "@material-ui/core";
 
-/* <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  enable-background="new 0 0 1000 1000" xml:space="preserve">
-<metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
-
-</svg> */
-
 export default function Crosshair(props) {
   return (
     <SvgIcon x="0px" y="0px" viewBox="0 0 1000 1000" {...props}>

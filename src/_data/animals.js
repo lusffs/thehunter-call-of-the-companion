@@ -62,7 +62,7 @@ export default [
   {
     _id: "005",
     class: 5,
-    name: "Pronghorn",
+    name: "Mountain Lion",
     maxLevel: 9,
     callers: [],
     scents: [],

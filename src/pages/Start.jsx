@@ -1,7 +1,6 @@
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
-import backgroundImage from "background2.jpg";
-import RightHandSwitch from "components/RightHandSwitch";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 import {
   Typography,
   Button,
@@ -11,8 +10,8 @@ import {
   Box,
 } from "@material-ui/core";
 
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import Crosshair from "Icons/Crosshair";
+import backgroundImage from "assets/images/background2.jpg";
+import Crosshair from "components/icons/Crosshair";
 
 export default function Start() {
   const classes = useStyles();
@@ -24,7 +23,7 @@ export default function Start() {
           <Typography color="primary" variant="h3">
             theHunter
           </Typography>
-          <Typography variant="h4">Call of the Companion App</Typography>
+          <Typography variant="h4">Call of the Companion</Typography>
         </Box>
       </Box>
       <Container maxWidth="md">
@@ -32,9 +31,8 @@ export default function Start() {
           <Grid item>
             <Paper>
               <Box my={3} p={3}>
-                <Typography variant="h4">Hello there</Typography>
-                <Typography variant="h3">Hunter</Typography>
-                <Typography variant="body1">
+                <Typography variant="h4">Hello there Hunter</Typography>
+                <Typography variant="body1" paragraph>
                   The App is currently under development.
                 </Typography>
                 <Button
@@ -45,7 +43,6 @@ export default function Start() {
                 >
                   Animals
                 </Button>
-                <RightHandSwitch />
               </Box>
             </Paper>
           </Grid>

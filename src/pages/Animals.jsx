@@ -10,17 +10,32 @@ import {
   Container,
   Paper,
   Box,
+  Toolbar,
 } from "@material-ui/core";
 
 import animals from "_data/animals";
 
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import useStore from "global-hook-store";
+import settingsStore from "store/settings";
 
 export default function Start() {
   const classes = useStyles();
+  const {
+    state: { useKiloWeightUnit },
+  } = useStore(settingsStore);
 
+  const renderWeight = (weight) => {
+    const w = useKiloWeightUnit ? weight.kg : weight.lbs;
+    if (w) {
+      return `(${w} ${useKiloWeightUnit ? "kg" : "lbs"})`;
+    }
+
+    return "";
+  };
   return (
     <>
+      <Toolbar />
       <Container maxWidth="md">
         <Grid container alignContent="center" alignItems="center">
           <Grid item xs={12}>
@@ -53,11 +68,11 @@ export default function Start() {
                         <TableCell align="center">{animal.maxLevel}</TableCell>
 
                         <TableCell align="right" className={classes.noWrap}>
-                          {`${animal.diamondRequirement.trophyRating} ${
-                            animal.diamondRequirement.weight.kg
-                              ? `(${animal.diamondRequirement.weight.kg} kg)`
-                              : ""
-                          } 🏆`}
+                          {`${
+                            animal.diamondRequirement.trophyRating
+                          } ${renderWeight(
+                            animal.diamondRequirement.weight
+                          )} 🏆`}
                         </TableCell>
                       </TableRow>
                     ))}

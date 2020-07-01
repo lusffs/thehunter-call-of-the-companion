@@ -7,12 +7,6 @@ export default function PageRouter() {
   return (
     <>
       <Switch>
-        <Route path="/about">
-          <h1>About</h1>
-        </Route>
-        <Route path="/topics">
-          <h1>topics</h1>
-        </Route>
         <Route path="/animals">
           <AnimalsPage />
         </Route>
