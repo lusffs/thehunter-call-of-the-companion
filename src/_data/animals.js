@@ -1,137 +1,107 @@
+import AxisDeer from "./animals/AxisDeer";
+import BeceiteIbex from "./animals/BeceiteIbex";
+import BighornSheep from "./animals/BighornSheep";
+import BlackBear from "./animals/BlackBear";
+import Blackbuck from "./animals/Blackbuck";
+import BlacktailDeer from "./animals/BlacktailDeer";
+import BlueWilderbeest from "./animals/BlueWilderbeest";
+import BrownBear from "./animals/BrownBear";
+import CanadaGoose from "./animals/CanadaGoose";
+import CapeBuffalo from "./animals/CapeBuffalo";
+import Caribou from "./animals/Caribou";
+import CinnamonTeal from "./animals/CinnamonTeal";
+import Coyote from "./animals/Coyote";
+import EurasianLynx from "./animals/EurasianLynx";
+import EuropeanBison from "./animals/EuropeanBison";
+import EuropeanHare from "./animals/EuropeanHare";
+import FallowDeer from "./animals/FallowDeer";
+import Gemsbok from "./animals/Gemsbok";
+import GredosIbex from "./animals/GredosIbex";
+import GreyWolf from "./animals/GreyWolf";
+import GrizzlyBear from "./animals/GrizzlyBear";
+import HarlequinDuck from "./animals/HarlequinDuck";
+import IberianMouflon from "./animals/IberianMouflon";
+import IberianWolf from "./animals/IberianWolf";
+import Jackal from "./animals/Jackal";
+import Jackrabbit from "./animals/Jackrabbit";
+import LesserKudu from "./animals/LesserKudu";
+import Lion from "./animals/Lion";
+import Mallard from "./animals/Mallard";
+import Moose from "./animals/Moose";
+import MountainGoat from "./animals/MountainGoat";
+import MountainLion from "./animals/MountainLion";
+import MuleDeer from "./animals/MuleDeer";
+import MuskDeer from "./animals/MuskDeer";
+import PlainsBison from "./animals/PlainsBison";
+import Pronghorn from "./animals/Pronghorn";
+import Puma from "./animals/Puma";
+import RedDeer from "./animals/RedDeer";
+import RedFox from "./animals/RedFox";
+import Reindeer from "./animals/Reindeer";
+import RockyMountainElk from "./animals/RockyMountainElk";
+import RoeDeer from "./animals/RoeDeer";
+import RondaIbex from "./animals/RondaIbex";
+import RooseveltElk from "./animals/RooseveltElk";
+import ScrubHare from "./animals/ScrubHare";
+import SpanishIbex from "./animals/SpanishIbex";
+import Springbok from "./animals/Springbok";
+import Turkey from "./animals/Turkey";
+import Warthog from "./animals/Warthog";
+import WaterBuffalo from "./animals/WaterBuffalo";
+import WhitetailDeer from "./animals/WhitetailDeer";
+import WildBoar from "./animals/WildBoar";
+
 export default [
-  {
-    _id: "001",
-    class: 1,
-    name: "Merriams Turkey",
-    maxLevel: 3,
-    callers: ["Wild Turkey Crow Caller", "Wild Turkey Mouth Caller"],
-    scents: [],
-    diamondRequirement: {
-      trophyRating: 5,
-      weight: {
-        kg: 10,
-        lbs: 23,
-      },
-    },
-  },
-  {
-    _id: "002",
-    class: 4,
-    name: "Bighorn Sheep",
-    maxLevel: 5,
-    callers: [],
-    scents: [],
-    diamondRequirement: {
-      trophyRating: 165,
-      weight: {
-        kg: null,
-        lbs: null,
-      },
-    },
-  },
-  {
-    _id: "003",
-    class: 4,
-    name: "Mountain Goat",
-    maxLevel: 5,
-    callers: [],
-    scents: [],
-    diamondRequirement: {
-      trophyRating: 108,
-      weight: {
-        kg: null,
-        lbs: null,
-      },
-    },
-  },
-  {
-    _id: "004",
-    class: 4,
-    name: "Pronghorn",
-    maxLevel: 5,
-    callers: [],
-    scents: [],
-    diamondRequirement: {
-      trophyRating: 98,
-      weight: {
-        kg: null,
-        lbs: null,
-      },
-    },
-  },
-  {
-    _id: "005",
-    class: 5,
-    name: "Mountain Lion",
-    maxLevel: 9,
-    callers: [],
-    scents: [],
-    diamondRequirement: {
-      trophyRating: 39,
-      weight: {
-        kg: 100,
-        lbs: 220,
-      },
-    },
-  },
-  {
-    _id: "006",
-    class: 6,
-    name: "Mule Deer",
-    maxLevel: 5,
-    callers: ['Deer "Bleat" Caller'],
-    scents: [],
-    diamondRequirement: {
-      trophyRating: 498,
-      weight: {
-        kg: 195,
-        lbs: 430,
-      },
-    },
-  },
-  {
-    _id: "007",
-    class: 7,
-    name: "Black Bear",
-    maxLevel: 9,
-    callers: ['Predator "Distressed Fawn" Caller'],
-    scents: [],
-    diamondRequirement: {
-      trophyRating: 23,
-      weight: {
-        kg: null,
-        lbs: null,
-      },
-    },
-  },
-  {
-    _id: "008",
-    class: 8,
-    name: "Rocky Mountain Elk",
-    maxLevel: 5,
-    callers: ["Elk Caller"],
-    scents: ["Rocky Mountain Elk Scent"],
-    diamondRequirement: {
-      trophyRating: 481,
-      weight: {
-        kg: null,
-        lbs: null,
-      },
-    },
-  },
-  {
-    _id: "009",
-    class: 9,
-    name: "Plains Bison",
-    maxLevel: 5,
-    callers: [],
-    scents: [],
-    diamondRequirement: {
-      trophyRating: 203,
-      weight: {
-        kg: 1094,
-        lbs: 2411,
-      },
-    },
-  },
+  AxisDeer,
+  BeceiteIbex,
+  BighornSheep,
+  BlackBear,
+  Blackbuck,
+  BlacktailDeer,
+  BlueWilderbeest,
+  BrownBear,
+  CanadaGoose,
+  CapeBuffalo,
+  Caribou,
+  CinnamonTeal,
+  Coyote,
+  EurasianLynx,
+  EuropeanBison,
+  EuropeanHare,
+  FallowDeer,
+  Gemsbok,
+  GredosIbex,
+  GreyWolf,
+  GrizzlyBear,
+  HarlequinDuck,
+  IberianMouflon,
+  IberianWolf,
+  Jackal,
+  Jackrabbit,
+  LesserKudu,
+  Lion,
+  Mallard,
+  Moose,
+  MountainGoat,
+  MountainLion,
+  MuleDeer,
+  MuskDeer,
+  PlainsBison,
+  Pronghorn,
+  Puma,
+  RedDeer,
+  RedFox,
+  Reindeer,
+  RockyMountainElk,
+  RoeDeer,
+  RondaIbex,
+  RooseveltElk,
+  ScrubHare,
+  SpanishIbex,
+  Springbok,
+  Turkey,
+  Warthog,
+  WaterBuffalo,
+  WhitetailDeer,
+  WildBoar,
 ];
