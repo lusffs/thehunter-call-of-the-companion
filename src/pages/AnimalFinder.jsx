@@ -17,6 +17,7 @@ import {
 import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 import animals from "_data/animals";
 import backgroundImage from "assets/images/background.jpg";
+import AnimalCard from "components/AnimalCard";
 
 const firstLetters = animals.reduce((accumulator, animal) => {
   for (const n of animal.name.split(" ")) {
@@ -146,18 +147,24 @@ export default function AnimalFinder() {
         fullWidth
         maxWidth="xs"
         aria-labelledby="form-dialog-title"
+        scroll = "body"
       >
         {selectedAnimal && (
           <>
-            <DialogTitle id="form-dialog-title">
-              {selectedAnimal.name}
-            </DialogTitle>
-            <DialogContent>
-              <DialogContentText>{`Class: ${selectedAnimal.class}`}</DialogContentText>
-              <p id="transition-modal-description">
-                {selectedAnimal.diamondRequirement.trophyRating}
-              </p>
-            </DialogContent>
+         <AnimalCard 
+          animal={selectedAnimal} 
+         
+          onBackClick={() => {
+            setDialogOpen(false);
+            setSelectedCharacter("");
+          }}
+          
+          onCloseClick={() => {
+            setDialogOpen(false);
+          }}
+          
+          />
+{/* 
             <DialogActions>
               <Button
                 variant="contained"
@@ -179,10 +186,12 @@ export default function AnimalFinder() {
               >
                 Close
               </Button>
-            </DialogActions>
+            </DialogActions> */}
           </>
         )}
+     
       </Dialog>
+
     </>
   );
 }
