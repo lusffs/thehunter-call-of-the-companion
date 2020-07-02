@@ -18,7 +18,11 @@ export default function Footer() {
     <>
       <Container disableGutters maxWidth="md">
         <Box py={3}>
-          <Typography variant="body2" className={classes.footerParagraph}>
+          <Typography
+            variant="body1"
+            color="primary"
+            className={classes.footerParagraph}
+          >
             {"Made with "}
             <Typography
               variant="body2"
