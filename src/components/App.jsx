@@ -7,6 +7,7 @@ import PageRouter from "components/PageRouter";
 import Footer from "components/Footer";
 import theme from "theme";
 import ScrollToTop from "./ScrollToTop";
+import { Grid } from "@material-ui/core";
 
 function App() {
   return (
@@ -14,9 +15,15 @@ function App() {
       <ScrollToTop />
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Header />
-        <PageRouter />
-        <Footer />
+        <Grid container direction="column" style={{ minHeight: "100vh" }}>
+          <Header />
+          <Grid item xs={12} style={{ flexGrow: 1 }}>
+            <PageRouter />
+          </Grid>
+          <Grid item xs={12}>
+            <Footer />
+          </Grid>
+        </Grid>
       </ThemeProvider>
     </Router>
   );

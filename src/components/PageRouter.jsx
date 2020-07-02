@@ -6,21 +6,19 @@ import AnimalFinder from "pages/AnimalFinder";
 
 export default function PageRouter() {
   return (
-    <>
-      <Switch>
-        <Route path="/animals">
-          <AnimalsPage />
-        </Route>
-        <Route path="/animal-finder">
-          <AnimalFinder />
-        </Route>
-        <Route exact path="/">
-          <StartPage />
-        </Route>
-        <Route path="/*">
-          <h1>404</h1>
-        </Route>
-      </Switch>
-    </>
+    <Switch>
+      <Route path="/animals">
+        <AnimalsPage />
+      </Route>
+      <Route path="/animal-finder">
+        <AnimalFinder />
+      </Route>
+      <Route exact path="/">
+        <StartPage />
+      </Route>
+      <Route path="/*">
+        <h1>404</h1>
+      </Route>
+    </Switch>
   );
 }
