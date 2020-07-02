@@ -29,19 +29,63 @@
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
     />
     <title>Hunter Companion - TheHunter: Call of the Companion</title>
+    <style>
+      #splash {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        transition: opacity 0.25s ease-in-out;
+        z-index: 9999;
+      }
+      .page-loader {
+        background-color: #282c34;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+      }
+
+      .page-loader > img {
+        animation: 2.4s infinite swing;
+      }
+
+      @keyframes swing {
+        0% {
+          transform: scale(1) translate(0, 10px);
+        }
+        25% {
+          transform: scale(1.05) rotate(5deg) translate(15px, 0);
+        }
+        50% {
+          transform: scale(1) translate(0, 10px);
+        }
+        75% {
+          transform: scale(1.05) rotate(-5deg) translate(-15px, 0);
+        }
+        100% {
+          transform: scale(1) translate(0, 10px);
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div id="splash">
+      <div class="page-loader">
+        <img
+          width="192"
+          src="%PUBLIC_URL%/logo192.png"
+          alt="Waiting for Hunter Companion to load..."
+        />
+      </div>
+    </div>
   </body>
 </html>
