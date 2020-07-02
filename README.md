@@ -31,11 +31,10 @@ Your app is ready to be deployed!
 
 ### `yarn deploy`
 
-Create a tar ball at the root folder called `build.tar.gz`.
+Creates a tar ball at the root folder called `build.tar.gz`.
 
-Upload `build.tar.gz` as new release and copy link from Github.
-
-SSH to server and run command `sh ~/cotw.release.sh LINK_TO_RELEASE_ASSET_ON_GITHUB`
+1. Upload this as new release to git hub and copy the asset link.
+2. SSH to server and run command `sh ~/cotw.release.sh 0.2.0` with the new release number as argument.
 
 ### Making a Progressive Web App
 
