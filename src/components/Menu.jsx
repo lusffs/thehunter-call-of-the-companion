@@ -45,9 +45,11 @@ export default function Menu() {
         <ListItem button component={Link} to={"/"}>
           <ListItemText primary={"Home"} />
         </ListItem>
-
         <ListItem button component={Link} to={"/animals"}>
           <ListItemText primary={"Animals"} />
+        </ListItem>
+        <ListItem button component={Link} to={"/animal-finder"}>
+          <ListItemText primary={"Animal finder"} />
         </ListItem>
       </List>
       <Divider />
