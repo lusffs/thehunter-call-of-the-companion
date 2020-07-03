@@ -1,18 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import useStore from "global-hook-store";
-import settingsStore from "store/settings";
-import Drawer from "@material-ui/core/Drawer";
+import Fab from "@material-ui/core/Fab";
+import Link from "react-router-dom/Link";
 import List from "@material-ui/core/List";
+import { useTheme } from "@material-ui/core";
+import Drawer from "@material-ui/core/Drawer";
+import MenuIcon from "@material-ui/icons/Menu";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import MenuIcon from "@material-ui/icons/Menu";
-import Fab from "@material-ui/core/Fab";
 import IconButton from "@material-ui/core/IconButton";
+import { makeStyles } from "@material-ui/core/styles";
+import ListItemText from "@material-ui/core/ListItemText";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { useTheme } from "@material-ui/core";
+
+import useStore from "global-hook-store";
+import settingsStore from "store/settings";
 
 export default function Menu() {
   const classes = useStyles();
@@ -62,7 +63,7 @@ export default function Menu() {
         <Fab
           className={isRightHanded ? classes.button : classes.buttonLeftHanded}
           color="primary"
-          aria-label="add"
+          aria-label="Menu"
           onClick={toggleDrawer(true)}
         >
           <MenuIcon />
@@ -72,7 +73,7 @@ export default function Menu() {
           edge="start"
           className={classes.menuButton}
           color="inherit"
-          aria-label="menu"
+          aria-label="Menu"
           onClick={toggleDrawer(true)}
         >
           <MenuIcon />

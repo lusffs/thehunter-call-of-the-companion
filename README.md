@@ -39,3 +39,13 @@ Creates a tar ball at the root folder called `build.tar.gz`.
 ### Making a Progressive Web App
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### SSL
+
+Setup cerificates with `certbot certonly --webroot -w /var/www/cotw.studiolus.com/public_html/ -d cotw.studiolus.com`
+
+Renew certificates with `certbot renew`
+
+https://pimylifeup.com/raspberry-pi-ssl-lets-encrypt/
+
+https://certbot.eff.org/lets-encrypt/pip-nginx

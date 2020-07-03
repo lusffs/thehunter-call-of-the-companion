@@ -1,16 +1,17 @@
 import React from "react";
+import { useTheme } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
 import Dialog from "@material-ui/core/Dialog";
+import IconButton from "@material-ui/core/IconButton";
+import SettingsIcon from "@material-ui/icons/Settings";
+import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { useTheme } from "@material-ui/core";
-import SettingsIcon from "@material-ui/icons/Settings";
-import RightHandSwitch from "components/RightHandSwitch";
+import DialogContentText from "@material-ui/core/DialogContentText";
+
 import WeightSwitch from "components/WeightSwitch";
+import RightHandSwitch from "components/RightHandSwitch";
 
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
@@ -26,15 +27,20 @@ export default function FormDialog() {
 
   return (
     <>
-      <IconButton edge="end" color="inherit" onClick={handleClickOpen}>
+      <IconButton
+        edge="end"
+        color="inherit"
+        onClick={handleClickOpen}
+        aria-label="Settings"
+      >
         <SettingsIcon />
       </IconButton>
       <Dialog
         open={open}
         onClose={handleClose}
-        aria-labelledby="form-dialog-title"
+        aria-labelledby="settings-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">Settings</DialogTitle>
+        <DialogTitle id="settings-dialog-title">Settings</DialogTitle>
         <DialogContent>
           {matches && (
             <>
@@ -49,7 +55,12 @@ export default function FormDialog() {
           <DialogContentText>Weight in kg instead of lbs</DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary" variant="contained">
+          <Button
+            onClick={handleClose}
+            color="primary"
+            variant="contained"
+            aria-label="Close dialog"
+          >
             Close
           </Button>
         </DialogActions>
