@@ -1,22 +1,23 @@
 import React, { useState } from "react";
+
+import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import Hidden from "@material-ui/core/Hidden";
+import Dialog from "@material-ui/core/Dialog";
+import Toolbar from "@material-ui/core/Toolbar";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {
-  Box,
-  Grid,
-  Button,
-  Dialog,
-  Toolbar,
-  Container,
-  Typography,
-  DialogTitle,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  Hidden,
-} from "@material-ui/core";
+import DialogContentText from "@material-ui/core/DialogContentText";
 import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
-import animals from "_data/animals";
+
 import backgroundImage from "assets/images/background.jpg";
+
+import animals from "_data/animals";
 
 const firstLetters = animals.reduce((accumulator, animal) => {
   for (const n of animal.name.split(" ")) {

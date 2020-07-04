@@ -1,13 +1,16 @@
 import React from "react";
+
+import { Link as RouterLink } from "react-router-dom";
+
+import Link from "@material-ui/core/Link";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import Settings from "components/Settings";
-import { Link as RouterLink } from "react-router-dom";
+
 import Menu from "components/Menu";
+import Settings from "components/Settings";
 
 export default function Header() {
   const classes = useStyles();

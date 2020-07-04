@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { useTheme } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -14,7 +15,7 @@ import WeightSwitch from "components/WeightSwitch";
 import RightHandSwitch from "components/RightHandSwitch";
 
 export default function FormDialog() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const handleClickOpen = () => {

@@ -40,6 +40,14 @@ Creates a tar ball at the root folder called `build.tar.gz`.
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
+### Check bundle size and dependencies
+
+Install source-map-explorer to global scope.
+
+`npm install -g source-map-explorer`
+
+Create a fresh build `yarn build` and run `source-map-explorer ./build/static/js/*.js`
+
 ### SSL
 
 Setup cerificates with `certbot certonly --webroot -w /var/www/cotw.studiolus.com/public_html/ -d cotw.studiolus.com`

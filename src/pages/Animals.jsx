@@ -1,30 +1,29 @@
 import React, { useState, useRef, useEffect } from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Grid,
-  Container,
-  Paper,
-  Box,
-  Toolbar,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  Typography,
-} from "@material-ui/core";
 
-import animals from "_data/animals";
-import reserves from "_data/reserves";
-
+import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
+import Table from "@material-ui/core/Table";
+import Paper from "@material-ui/core/Paper";
+import Select from "@material-ui/core/Select";
+import Toolbar from "@material-ui/core/Toolbar";
+import TableRow from "@material-ui/core/TableRow";
+import MenuItem from "@material-ui/core/MenuItem";
+import Container from "@material-ui/core/Container";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableHead from "@material-ui/core/TableHead";
+import Typography from "@material-ui/core/Typography";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import TableContainer from "@material-ui/core/TableContainer";
+
 import useStore from "global-hook-store";
 import settingsStore from "store/settings";
+
 import heroImage from "assets/images/518790_screenshots_20200623202515_1.jpg";
+import animals from "_data/animals";
+import reserves from "_data/reserves";
 
 export default function Start() {
   const classes = useStyles();
@@ -82,6 +81,7 @@ export default function Start() {
               <Typography gutterBottom variant="h6">
                 Filters
               </Typography>
+
               <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel id="selected-reserve-label" color="secondary">
                   Selected Reserve

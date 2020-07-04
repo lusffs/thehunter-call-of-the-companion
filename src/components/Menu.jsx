@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+
 import Fab from "@material-ui/core/Fab";
-import Link from "react-router-dom/Link";
+
 import List from "@material-ui/core/List";
 import { useTheme } from "@material-ui/core";
 import Drawer from "@material-ui/core/Drawer";
@@ -14,10 +15,11 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import useStore from "global-hook-store";
 import settingsStore from "store/settings";
+const Link = require("react-router-dom").Link;
 
 export default function Menu() {
   const classes = useStyles();
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const {
