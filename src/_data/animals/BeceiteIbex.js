@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "beceite_ibex",
   class: 4,
   name: "Beceite Ibex",
   maxLevel: 5,
   callers: [],
   scents: [],
   reserves: ["Cuatro Colinas"],
-  diamondRequirement: {
-    trophyRating: 109,
-    weight: {
-      kg: 107,
-      lbs: 235,
-    },
+  trophyScore: {
+    silver: 78,
+    gold: 142.9,
+    diamond: 191.6,
+    maxScore: 201,
+  },
+  maxWeight: {
+    kg: 110,
+    lbs: 242,
   },
 };

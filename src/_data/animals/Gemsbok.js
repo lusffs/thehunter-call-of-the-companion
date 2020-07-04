@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "gemsbok",
   class: 8,
   name: "Gemsbok",
   maxLevel: 5,
-  callers: [],
+  callers: ["Antler Rattler"],
   scents: [],
   reserves: ["Vurhogna Savanna"],
-  diamondRequirement: {
-    trophyRating: 375,
-    weight: {
-      kg: 238,
-      lbs: 525,
-    },
+  trophyScore: {
+    silver: 194.8,
+    gold: 276.3,
+    diamond: 337.5,
+    maxScore: 358,
+  },
+  maxWeight: {
+    kg: 240,
+    lbs: 529,
   },
 };

@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "grizzly_bear",
   class: 7,
   name: "Grizzly Bear",
   maxLevel: 9,
-  callers: [],
+  callers: ['Predator "Distressed Fawn" Caller'],
   scents: [],
   reserves: ["Yukon Valley"],
-  diamondRequirement: {
-    trophyRating: 67,
-    weight: {
-      kg: 628,
-      lbs: 1385,
-    },
+  trophyScore: {
+    silver: 52.5,
+    gold: 60.7,
+    diamond: 66.9,
+    maxScore: 70,
+  },
+  maxWeight: {
+    kg: 680,
+    lbs: 1499,
   },
 };

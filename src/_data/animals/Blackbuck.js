@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "blackbuck",
   class: 3,
   name: "Blackbuck",
   maxLevel: 5,
-  callers: [],
+  callers: ["Antler Rattler"],
   scents: [],
   reserves: ["Parque Fernando"],
-  diamondRequirement: {
-    trophyRating: 28,
-    weight: {
-      kg: 47,
-      lbs: 104,
-    },
+  trophyScore: {
+    silver: 19.8,
+    gold: 24.7,
+    diamond: 28.2,
+    maxScore: 30,
+  },
+  maxWeight: {
+    kg: 51,
+    lbs: 112,
   },
 };

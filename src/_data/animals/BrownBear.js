@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "brown_bear",
   class: 7,
   name: "Brown Bear",
   maxLevel: 9,
-  callers: [],
+  callers: ['Predator "Distressed Fawn" Caller'],
   scents: [],
   reserves: ["Medved Taiga"],
-  diamondRequirement: {
-    trophyRating: 28,
-    weight: {
-      kg: 445,
-      lbs: 981,
-    },
+  trophyScore: {
+    silver: 18.6,
+    gold: 23.7,
+    diamond: 27.7,
+    maxScore: 30,
+  },
+  maxWeight: {
+    kg: 482,
+    lbs: 1063,
   },
 };

@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "reindeer",
   class: 6,
   name: "Reindeer",
   maxLevel: 3,
-  callers: [],
+  callers: ["Antler Rattler"],
   scents: [],
   reserves: ["Medved Taiga"],
-  diamondRequirement: {
-    trophyRating: 495,
-    weight: {
-      kg: 180,
-      lbs: 396,
-    },
+  trophyScore: {
+    silver: 152.5,
+    gold: 311.2,
+    diamond: 430.2,
+    maxScore: 470,
+  },
+  maxWeight: {
+    kg: 182,
+    lbs: 401,
   },
 };

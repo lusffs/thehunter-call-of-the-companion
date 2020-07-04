@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "red_fox",
   class: 2,
   name: "Red Fox",
   maxLevel: 9,
-  callers: [],
+  callers: ['Predator "Jackrabbit" Caller'],
   scents: [],
   reserves: ["Yukon Valley", "Hirschfelden"],
-  diamondRequirement: {
-    trophyRating: 29,
-    weight: {
-      kg: 14,
-      lbs: 31,
-    },
+  trophyScore: {
+    silver: 4.6,
+    gold: 10,
+    diamond: 14,
+    maxScore: 15,
+  },
+  maxWeight: {
+    kg: 15.4,
+    lbs: 34,
   },
 };

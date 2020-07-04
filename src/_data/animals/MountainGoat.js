@@ -1,16 +1,19 @@
 export default {
-  _id: "003",
+  _id: "mountain_goat",
   class: 4,
   name: "Mountain Goat",
   maxLevel: 5,
   callers: [],
   scents: [],
   reserves: ["Silver Ridge Peaks"],
-  diamondRequirement: {
-    trophyRating: 108,
-    weight: {
-      kg: null,
-      lbs: null,
-    },
+  trophyScore: {
+    silver: 52.7,
+    gold: 84.1,
+    diamond: 107.6,
+    maxScore: 115,
+  },
+  maxWeight: {
+    kg: 145,
+    lbs: 320,
   },
 };

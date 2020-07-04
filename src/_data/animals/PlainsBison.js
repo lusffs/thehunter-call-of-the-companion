@@ -1,16 +1,19 @@
 export default {
-  _id: "009",
+  _id: "plains_bison",
   class: 9,
   name: "Plains Bison",
   maxLevel: 5,
   callers: [],
   scents: [],
   reserves: ["Silver Ridge Peaks", "Yukon Valley"],
-  diamondRequirement: {
-    trophyRating: 203, //151 YV
-    weight: {
-      kg: 1094, //1115 YV
-      lbs: 2411, //2458 YV
-    },
+  trophyScore: {
+    silver: 50.7,
+    gold: 148.1,
+    diamond: 221.1,
+    maxScore: 245.5,
+  },
+  maxWeight: {
+    kg: 1200,
+    lbs: 2645,
   },
 };

@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "puma",
   class: 5,
   name: "Puma",
   maxLevel: 9,
-  callers: [],
+  callers: ['Predator "Distressed Fawn" Caller'],
   scents: [],
   reserves: ["Parque Fernando"],
-  diamondRequirement: {
-    trophyRating: 39,
-    weight: {
-      kg: 97,
-      lbs: 215,
-    },
+  trophyScore: {
+    silver: 32,
+    gold: 36,
+    diamond: 39,
+    maxScore: 40,
+  },
+  maxWeight: {
+    kg: 95,
+    lbs: 231,
   },
 };

@@ -1,16 +1,19 @@
 export default {
-  _id: "007",
+  _id: "black_bear",
   class: 7,
   name: "Black Bear",
   maxLevel: 9,
   callers: ['Predator "Distressed Fawn" Caller'],
   scents: [],
   reserves: ["Silver Ridge Peaks", "Layton Lakes"],
-  diamondRequirement: {
-    trophyRating: 23,
-    weight: {
-      kg: 265, // Numbers from Layton else null?
-      lbs: 584, // Numbers from Layton else null?
-    },
+  trophyScore: {
+    silver: 14.3,
+    gold: 19.2,
+    diamond: 22.7,
+    maxScore: 24,
+  },
+  maxWeight: {
+    kg: 290,
+    lbs: 639,
   },
 };

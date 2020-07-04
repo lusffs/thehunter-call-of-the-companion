@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "coyote",
   class: 2,
   name: "Coyote",
   maxLevel: 9,
-  callers: [],
+  callers: ['Predator "Jackrabbit" Caller'],
   scents: [],
   reserves: ["Layton Lakes"],
-  diamondRequirement: {
-    trophyRating: 248,
-    weight: {
-      kg: 26,
-      lbs: 57,
-    },
+  trophyScore: {
+    silver: 38.3,
+    gold: 48.9,
+    diamond: 56.8,
+    maxScore: 60,
+  },
+  maxWeight: {
+    kg: 27,
+    lbs: 59,
   },
 };

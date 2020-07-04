@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "blue_wilderbeest",
   class: 6,
   name: "Blue Wilderbeest",
   maxLevel: 5,
-  callers: [],
+  callers: ['Buck "Snort Wheeze" Caller'],
   scents: [],
   reserves: ["Vurhogna Savanna"],
-  diamondRequirement: {
-    trophyRating: 38,
-    weight: {
-      kg: 272,
-      lbs: 600,
-    },
+  trophyScore: {
+    silver: 21.6,
+    gold: 30.7,
+    diamond: 37.6,
+    maxScore: 40,
+  },
+  maxWeight: {
+    kg: 290,
+    lbs: 639,
   },
 };

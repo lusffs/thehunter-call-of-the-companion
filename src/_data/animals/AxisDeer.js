@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "axis_deer",
   class: 3,
   name: "Axis Deer",
   maxLevel: 5,
-  callers: [],
+  callers: ['Axis Deer "Screamer" Caller'],
   scents: [],
   reserves: ["Parque Fernando"],
-  diamondRequirement: {
-    trophyRating: 351,
-    weight: {
-      kg: 69,
-      lbs: 153,
-    },
+  trophyScore: {
+    silver: 138.8,
+    gold: 264.4,
+    diamond: 358.6,
+    maxScore: 390,
+  },
+  maxWeight: {
+    kg: 75,
+    lbs: 165,
   },
 };

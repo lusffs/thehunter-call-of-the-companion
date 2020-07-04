@@ -1,16 +1,22 @@
 export default {
-  _id: "000",
+  _id: "lion",
   class: 9,
   name: "Lion",
   maxLevel: 9,
-  callers: [],
+  callers: [
+    'Predator "Jackrabbit" Caller',
+    'Predator "Distressed Fawn" Caller',
+  ],
   scents: [],
   reserves: ["Vurhogna Savanna"],
-  diamondRequirement: {
-    trophyRating: 49,
-    weight: {
-      kg: 257,
-      lbs: 565,
-    },
+  trophyScore: {
+    silver: 38,
+    gold: 44,
+    diamond: 48.5,
+    maxScore: 50,
+  },
+  maxWeight: {
+    kg: 270,
+    lbs: 595,
   },
 };

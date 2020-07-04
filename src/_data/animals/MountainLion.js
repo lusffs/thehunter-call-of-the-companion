@@ -1,16 +1,19 @@
 export default {
-  _id: "005",
+  _id: "mountain_lion",
   class: 5,
   name: "Mountain Lion",
   maxLevel: 9,
-  callers: [],
+  callers: ['Predator "Distressed Fawn" Caller'],
   scents: [],
   reserves: ["Silver Ridge Peaks"],
-  diamondRequirement: {
-    trophyRating: 39,
-    weight: {
-      kg: 100,
-      lbs: 220,
-    },
+  trophyScore: {
+    silver: 32,
+    gold: 36,
+    diamond: 39,
+    maxScore: 40,
+  },
+  maxWeight: {
+    kg: 105,
+    lbs: 231,
   },
 };

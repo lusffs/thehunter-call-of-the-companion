@@ -6,11 +6,14 @@ export default {
   callers: [],
   scents: [],
   reserves: ["Silver Ridge Peaks"],
-  diamondRequirement: {
-    trophyRating: 98,
-    weight: {
-      kg: null,
-      lbs: null,
-    },
+  trophyScore: {
+    silver: 46,
+    gold: 75.7,
+    diamond: 98,
+    maxScore: 105,
+  },
+  maxWeight: {
+    kg: 65,
+    lbs: 143,
   },
 };

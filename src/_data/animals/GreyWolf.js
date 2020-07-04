@@ -1,16 +1,26 @@
 export default {
-  _id: "000",
+  _id: "grey_wolf",
   class: 5,
   name: "Grey Wolf",
   maxLevel: 9,
-  callers: [],
+  callers: ['Predator "Distressed Fawn" Caller'],
   scents: [],
   reserves: ["Yukon Valley"],
   diamondRequirement: {
     trophyRating: 39,
-    weight: {
+    maxWeight: {
       kg: 75,
       lbs: 165,
     },
+  },
+  trophyScore: {
+    silver: 32,
+    gold: 36,
+    diamond: 39,
+    maxScore: 40,
+  },
+  maxWeight: {
+    kg: 80,
+    lbs: 176,
   },
 };

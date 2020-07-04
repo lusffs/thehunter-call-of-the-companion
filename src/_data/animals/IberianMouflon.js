@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "iberian_mouflon",
   class: 4,
   name: "Iberian Mouflon",
   maxLevel: 5,
   callers: [],
   scents: [],
   reserves: ["Cuatro Colinas"],
-  diamondRequirement: {
-    trophyRating: 205,
-    weight: {
-      kg: 58,
-      lbs: 128,
-    },
+  trophyScore: {
+    silver: 97,
+    gold: 144.1,
+    diamond: 179.5,
+    maxScore: 186,
+  },
+  maxWeight: {
+    kg: 60,
+    lbs: 132,
   },
 };

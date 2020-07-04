@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "caribou",
   class: 6,
   name: "Caribou",
   maxLevel: 5,
-  callers: [],
+  callers: ["Antler Rattler"],
   scents: [],
   reserves: ["Yukon Valley"],
-  diamondRequirement: {
-    trophyRating: 400,
-    weight: {
-      kg: 186,
-      lbs: 410,
-    },
+  trophyScore: {
+    silver: 152.5,
+    gold: 311.2,
+    diamond: 430.2,
+    maxScore: 470,
+  },
+  maxWeight: {
+    kg: 190,
+    lbs: 418,
   },
 };

@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "roosevelt_elk",
   class: 7,
   name: "Roosevelt Elk",
   maxLevel: 5,
-  callers: [],
+  callers: ["Elk Caller"],
   scents: [],
   reserves: ["Layton Lakes"],
-  diamondRequirement: {
-    trophyRating: 338,
-    weight: {
-      kg: 479,
-      lbs: 1057,
-    },
+  trophyScore: {
+    silver: 128.7,
+    gold: 272.7,
+    diamond: 380.8,
+    maxScore: 420,
+  },
+  maxWeight: {
+    kg: 500,
+    lbs: 1102,
   },
 };

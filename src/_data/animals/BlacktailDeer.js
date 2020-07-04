@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "blacktail_deer",
   class: 4,
   name: "Blacktail Deer",
   maxLevel: 5,
-  callers: [],
+  callers: ['Deer "Bleat" Caller', 'Deer "Grunt" Caller'],
   scents: [],
   reserves: ["Layton Lakes"],
-  diamondRequirement: {
-    trophyRating: 207,
-    weight: {
-      kg: 90,
-      lbs: 197,
-    },
+  trophyScore: {
+    silver: 76.9,
+    gold: 134.4,
+    diamond: 177.5,
+    maxScore: 230,
+  },
+  maxWeight: {
+    kg: 95,
+    lbs: 209,
   },
 };

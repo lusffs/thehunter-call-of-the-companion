@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "iberian_wolf",
   class: 5,
   name: "Iberian Wolf",
   maxLevel: 9,
-  callers: [],
+  callers: ['Predator "Distressed Fawn" Caller'],
   scents: [],
   reserves: ["Cuatro Colinas"],
-  diamondRequirement: {
-    trophyRating: 39,
-    weight: {
-      kg: 48,
-      lbs: 105,
-    },
+  trophyScore: {
+    silver: 32,
+    gold: 36,
+    diamond: 39,
+    maxScore: 40,
+  },
+  maxWeight: {
+    kg: 50,
+    lbs: 110,
   },
 };

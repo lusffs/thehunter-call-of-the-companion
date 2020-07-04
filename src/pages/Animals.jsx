@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 
 import Box from "@material-ui/core/Box";
+import Chip from "@material-ui/core/Chip";
 import Grid from "@material-ui/core/Grid";
 import Table from "@material-ui/core/Table";
 import Paper from "@material-ui/core/Paper";
@@ -27,7 +28,7 @@ import reserves from "_data/reserves";
 
 export default function Start() {
   const classes = useStyles();
-  const [selectedReserve, setSelectedReserve] = useState("all");
+  const [selectedReserve, setSelectedReserve] = useState("Silver Ridge Peaks");
   const [headerHeight, setHeaderHeight] = useState(0);
   const toolBarRef = useRef(null);
 
@@ -40,7 +41,7 @@ export default function Start() {
     if (w) {
       return (
         <Typography variant="body2">
-          <i>{`Min weight: ${w} ${useKiloWeightUnit ? "kg" : "lbs"}`}</i>
+          <i>{`Max weight: ${w} ${useKiloWeightUnit ? "kg" : "lbs"}`}</i>
         </Typography>
       );
     }
@@ -114,7 +115,8 @@ export default function Start() {
               <Table className={classes.table} aria-label="Animals table">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Name</TableCell>
+                    <TableCell></TableCell>
+                    <TableCell style={{ width: "100%" }}>Name</TableCell>
                     <TableCell align="right">
                       <span role="img" aria-label="Diamond">
                         💎
@@ -139,20 +141,26 @@ export default function Start() {
                     })
                     .map((animal, index) => (
                       <TableRow key={animal._id + index}>
-                        <TableCell component="th" scope="row">
-                          <Typography variant="body1">{animal.name}</Typography>
-                          <Typography variant="body2">
-                            <i>{`Class: ${animal.class}`}</i>
+                        <TableCell style={{ paddingRight: 0 }}>
+                          <Chip label={animal.class} />
+                        </TableCell>
+                        <TableCell component="th" scope="row" size="small">
+                          <Typography variant="body1" component="span">
+                            {animal.name}
                           </Typography>
                           <Typography variant="body2">
                             <i>{`Max level: ${animal.maxLevel}`}</i>
                           </Typography>
                         </TableCell>
-                        <TableCell align="right" className={classes.noWrap}>
+                        <TableCell
+                          align="right"
+                          className={classes.noWrap}
+                          size="small"
+                        >
                           <Typography variant="body1">
-                            {`${animal.diamondRequirement.trophyRating} 🏆`}
+                            {`${animal.trophyScore.diamond} 🏆`}
                           </Typography>
-                          {renderWeight(animal.diamondRequirement.weight)}
+                          {renderWeight(animal.maxWeight)}
                         </TableCell>
                       </TableRow>
                     ))}

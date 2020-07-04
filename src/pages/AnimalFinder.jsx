@@ -155,9 +155,16 @@ export default function AnimalFinder() {
             </DialogTitle>
             <DialogContent>
               <DialogContentText>{`Class: ${selectedAnimal.class}`}</DialogContentText>
-              <p id="transition-modal-description">
-                {selectedAnimal.diamondRequirement.trophyRating}
-              </p>
+              <DialogContentText>{`Max Weight: ${selectedAnimal.maxWeight.kg} kg`}</DialogContentText>
+              <Typography>
+                {`Silver: ${selectedAnimal.trophyScore.silver}`}
+              </Typography>
+              <Typography>
+                {`Gold: ${selectedAnimal.trophyScore.gold}`}
+              </Typography>
+              <Typography>
+                {`Diamond: ${selectedAnimal.trophyScore.diamond}`}
+              </Typography>
             </DialogContent>
             <DialogActions>
               <Button

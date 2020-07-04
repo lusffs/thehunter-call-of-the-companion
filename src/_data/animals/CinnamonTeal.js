@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "cinnamon_teal",
   class: 1,
   name: "Cinnamon Teal",
   maxLevel: 3,
-  callers: [],
+  callers: ["Beacon Delixe Duck Caller"],
   scents: [],
   reserves: ["Parque Fernando"],
-  diamondRequirement: {
-    trophyRating: 7,
-    weight: {
-      kg: 0,
-      lbs: 1,
-    },
+  trophyScore: {
+    silver: 3.3,
+    gold: 4,
+    diamond: 4.6,
+    maxScore: 4.8,
+  },
+  maxWeight: {
+    kg: 0.48,
+    lbs: 1.1,
   },
 };

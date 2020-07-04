@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "fallow_deer",
   class: 4,
   name: "Fallow Deer",
   maxLevel: 5,
-  callers: [],
+  callers: ["Antler Rattler"],
   scents: [],
   reserves: ["Hirschfelden"],
-  diamondRequirement: {
-    trophyRating: 172,
-    weight: {
-      kg: 96,
-      lbs: 211,
-    },
+  trophyScore: {
+    silver: 67.9,
+    gold: 172.9,
+    diamond: 251.7,
+    maxScore: 275,
+  },
+  maxWeight: {
+    kg: 100,
+    lbs: 220,
   },
 };

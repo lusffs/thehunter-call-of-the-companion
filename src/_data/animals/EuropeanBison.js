@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "european_bison",
   class: 9,
   name: "European Bison",
   maxLevel: 5,
   callers: [],
   scents: [],
   reserves: ["Hirschfelden"],
-  diamondRequirement: {
-    trophyRating: 221,
-    weight: {
-      kg: 868,
-      lbs: 1914,
-    },
+  trophyScore: {
+    silver: 63.2,
+    gold: 181.6,
+    diamond: 270.3,
+    maxScore: 300,
+  },
+  maxWeight: {
+    kg: 920,
+    lbs: 2028,
   },
 };

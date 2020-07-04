@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "european_hare",
   class: 1,
   name: "European Hare",
   maxLevel: 3,
   callers: [],
   scents: [],
   reserves: ["Cuatro Colinas"],
-  diamondRequirement: {
-    trophyRating: 7,
-    weight: {
-      kg: 7,
-      lbs: 15,
-    },
+  trophyScore: {
+    silver: 3,
+    gold: 5,
+    diamond: 6.5,
+    maxScore: 7,
+  },
+  maxWeight: {
+    kg: 7,
+    lbs: 15.4,
   },
 };

@@ -1,16 +1,19 @@
 export default {
-  _id: "000",
+  _id: "canada_goose",
   class: 1,
   name: "Canada Goose",
   maxLevel: 5,
-  callers: [],
+  callers: ["Short Reed Canada Goose Caller"],
   scents: [],
   reserves: ["Hirschfelden"],
-  diamondRequirement: {
-    trophyRating: 9,
-    weight: {
-      kg: 9,
-      lbs: 19,
-    },
+  trophyScore: {
+    silver: 4.4,
+    gold: 6.8,
+    diamond: 8.5,
+    maxScore: 9.2,
+  },
+  maxWeight: {
+    kg: 9.2,
+    lbs: 20.3,
   },
 };
