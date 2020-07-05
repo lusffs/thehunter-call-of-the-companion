@@ -29,6 +29,7 @@ import reserves from "_data/reserves";
 export default function Start() {
   const classes = useStyles();
   const [selectedReserve, setSelectedReserve] = useState("Silver Ridge Peaks");
+  const [selectedSorting, setSelectedSorting] = useState("class");
   const [headerHeight, setHeaderHeight] = useState(0);
   const toolBarRef = useRef(null);
 
@@ -50,6 +51,10 @@ export default function Start() {
 
   const handleReserveChange = (event) => {
     setSelectedReserve(event.target.value);
+  };
+
+  const handleSortingChange = (event) => {
+    setSelectedSorting(event.target.value);
   };
 
   useEffect(() => {
@@ -82,7 +87,6 @@ export default function Start() {
               <Typography gutterBottom variant="h6">
                 Filters
               </Typography>
-
               <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel id="selected-reserve-label" color="secondary">
                   Selected Reserve
@@ -108,6 +112,28 @@ export default function Start() {
                   })}
                 </Select>
               </FormControl>
+              <FormControl variant="outlined" className={classes.formControl}>
+                <InputLabel id="selected-reserve-label" color="secondary">
+                  Order by
+                </InputLabel>
+                <Select
+                  labelId="selected-reserve-label"
+                  id="selected-reserve"
+                  value={selectedSorting}
+                  onChange={handleSortingChange}
+                  label="Order by"
+                  displayEmpty
+                  color="secondary"
+                >
+                  <MenuItem value="class">Class</MenuItem>
+                  <MenuItem value="name">Name</MenuItem>
+                  <MenuItem value="maxLevel">Max Level</MenuItem>
+                  <MenuItem value="maxWeight">Max Weight</MenuItem>
+                  <MenuItem value="trophyRequirement">
+                    Trophy Requirement
+                  </MenuItem>
+                </Select>
+              </FormControl>
             </Box>
           </Grid>
           <Grid item xs={12} md={8}>
@@ -128,10 +154,26 @@ export default function Start() {
                 <TableBody>
                   {animals
                     .sort((a, b) => {
-                      return a.name < b.name ? 1 : -1;
+                      // Always sort by name before other sorts
+                      return a.name < b.name ? -1 : 1;
                     })
                     .sort((a, b) => {
-                      return a.class > b.class ? 1 : -1;
+                      if (selectedSorting === "class") {
+                        return a.class < b.class ? -1 : 1;
+                      }
+                      if (selectedSorting === "maxLevel") {
+                        return a.maxLevel < b.maxLevel ? -1 : 1;
+                      }
+                      if (selectedSorting === "maxWeight") {
+                        return a.maxWeight.kg < b.maxWeight.kg ? -1 : 1;
+                      }
+                      if (selectedSorting === "trophyRequirement") {
+                        return a.trophyScore.diamond < b.trophyScore.diamond
+                          ? -1
+                          : 1;
+                      }
+
+                      return 0;
                     })
                     .filter((animal) => {
                       if (selectedReserve === "all") {
