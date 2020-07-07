@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { Link as RouterLink } from "react-router-dom";
 import Box from "@material-ui/core/Box";
@@ -14,56 +14,25 @@ import backgroundImage from "assets/images/background2.jpg";
 import CrosshairIcon from "components/icons/Crosshair";
 import TextField from "@material-ui/core/TextField";
 
-const SERVER_SECOND_VALUE = 3600 / 920; // 1h in game = 15:20 minutes realtime => 3.913 seconds per 1 real life second
+import useStore from "global-hook-store";
+import huntingMate from "store/huntingMate";
 
 export default function Start() {
   const classes = useStyles();
   const [inGameTime, setInGameTime] = useState("07:00");
-  const [clientSyncTime, setClientSyncTime] = useState();
-  const [worldTime, setWorldTime] = useState();
-  const [serverClock, setServerClock] = useState("");
-  const [isActive, setIsActive] = useState(false);
 
-  useEffect(() => {
-    let interval = null;
-    if (isActive) {
-      interval = setInterval(() => {
-        const msSinceStart = new Date().getTime() - clientSyncTime;
-
-        const serverTime = new Date(worldTime);
-        serverTime.setMilliseconds(
-          serverTime.getMilliseconds() + msSinceStart * SERVER_SECOND_VALUE
-        );
-
-        setServerClock(
-          `${
-            serverTime.getHours() < 10
-              ? `0${serverTime.getHours()}`
-              : serverTime.getHours()
-          }:${
-            serverTime.getMinutes() < 10
-              ? `0${serverTime.getMinutes()}`
-              : serverTime.getMinutes()
-          }`
-        );
-      }, 250);
-    } else if (!isActive) {
-      clearInterval(interval);
-    }
-    return () => clearInterval(interval);
-  }, [isActive]);
+  const {
+    state: { isActive },
+    actions: { setIsActive, startHuntingMate },
+  } = useStore(huntingMate);
 
   const handleTimerClick = () => {
-    setWorldTime(
-      new Date().setHours(
-        parseInt(inGameTime.split(":")[0]),
-        parseInt(inGameTime.split(":")[1]),
-        0,
-        0
-      )
-    );
-    setClientSyncTime(new Date().getTime());
-    setIsActive(!isActive);
+    if (isActive) {
+      setIsActive(false);
+      return;
+    }
+
+    startHuntingMate(inGameTime);
   };
 
   const handleTimerChange = (e) => {
@@ -121,7 +90,6 @@ export default function Start() {
                   >
                     {isActive ? "Stop time sync" : "Start time sync"}
                   </Button>
-                  {serverClock && <h1>{serverClock}</h1>}
                 </form>
               </Box>
             </Paper>

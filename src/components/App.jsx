@@ -10,11 +10,13 @@ import Footer from "components/Footer";
 import Header from "components/Header";
 import PageRouter from "pages/_router";
 import ScrollToTop from "components/ScrollToTop";
+import HuntingMateDriver from "./HuntingMateDriver";
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <HuntingMateDriver />
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Grid container direction="column" style={{ minHeight: "100vh" }}>

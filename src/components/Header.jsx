@@ -12,9 +12,14 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import Menu from "components/Menu";
 import Settings from "components/Settings";
 
+import useStore from "global-hook-store";
+import huntingMate from "store/huntingMate";
+
 export default function Header() {
   const classes = useStyles();
-
+  const {
+    state: { inGameClock, isActive },
+  } = useStore(huntingMate);
   return (
     <>
       <AppBar position="fixed">
@@ -27,7 +32,9 @@ export default function Header() {
               component={RouterLink}
               to="/"
             >
-              <Typography variant="h6">Hunter Companion</Typography>
+              <Typography variant="h6">
+                {isActive ? inGameClock : "Hunter Companion"}
+              </Typography>
             </Link>
             <div className={classes.grow} />
             <Settings />
