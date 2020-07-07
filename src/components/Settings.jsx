@@ -57,7 +57,7 @@ export default function FormDialog() {
           <Button
             onClick={() => {
               localStorage.clear();
-              window.location.href = window.location.href;
+              window.location.reload();
             }}
             color="secondary"
             variant="contained"
