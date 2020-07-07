@@ -4,6 +4,7 @@ export default createStore(
   {
     isRightHanded: true,
     useKiloWeightUnit: true,
+    timeSyncModalOpen: false,
   },
   {
     toggleRightHanded: (state) => ({
@@ -13,6 +14,10 @@ export default createStore(
     toggleWeightUnit: (state) => ({
       ...state,
       useKiloWeightUnit: !state.useKiloWeightUnit,
+    }),
+    setTimeSyncModalOpen: (state, timeSyncModalOpen) => ({
+      ...state,
+      timeSyncModalOpen,
     }),
   }
 );

@@ -11,13 +11,15 @@ import Header from "components/Header";
 import PageRouter from "pages/_router";
 import ScrollToTop from "components/ScrollToTop";
 import HuntingMateDriver from "./HuntingMateDriver";
+import TimeSyncModal from "./TimeSyncModal";
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <HuntingMateDriver />
       <ThemeProvider theme={theme}>
+        <HuntingMateDriver />
+        <TimeSyncModal />
         <CssBaseline />
         <Grid container direction="column" style={{ minHeight: "100vh" }}>
           <Header />

@@ -7,19 +7,29 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import TimerOffIcon from "@material-ui/icons/TimerOff";
+import TimerIcon from "@material-ui/icons/Timer";
 
 import Menu from "components/Menu";
 import Settings from "components/Settings";
 
 import useStore from "global-hook-store";
-import huntingMate from "store/huntingMate";
+import huntingMateStore from "store/huntingMate";
+import settingsStore from "store/settings";
 
 export default function Header() {
   const classes = useStyles();
   const {
     state: { inGameClock, isActive },
-  } = useStore(huntingMate);
+    actions: { setIsActive },
+  } = useStore(huntingMateStore);
+
+  const {
+    actions: { setTimeSyncModalOpen },
+  } = useStore(settingsStore);
+
   return (
     <>
       <AppBar position="fixed">
@@ -36,6 +46,28 @@ export default function Header() {
                 {isActive ? inGameClock : "Hunter Companion"}
               </Typography>
             </Link>
+            {isActive && (
+              <IconButton
+                edge="end"
+                color="inherit"
+                onClick={() => {
+                  setIsActive(false);
+                }}
+                aria-label="Settings"
+              >
+                <TimerOffIcon />
+              </IconButton>
+            )}
+            <IconButton
+              edge="end"
+              color="inherit"
+              onClick={() => {
+                setTimeSyncModalOpen(true);
+              }}
+              aria-label="TimeSync"
+            >
+              <TimerIcon />
+            </IconButton>
             <div className={classes.grow} />
             <Settings />
           </Toolbar>

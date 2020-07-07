@@ -12,32 +12,9 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 
 import backgroundImage from "assets/images/background2.jpg";
 import CrosshairIcon from "components/icons/Crosshair";
-import TextField from "@material-ui/core/TextField";
-
-import useStore from "global-hook-store";
-import huntingMate from "store/huntingMate";
 
 export default function Start() {
   const classes = useStyles();
-  const [inGameTime, setInGameTime] = useState("07:00");
-
-  const {
-    state: { isActive },
-    actions: { setIsActive, startHuntingMate },
-  } = useStore(huntingMate);
-
-  const handleTimerClick = () => {
-    if (isActive) {
-      setIsActive(false);
-      return;
-    }
-
-    startHuntingMate(inGameTime);
-  };
-
-  const handleTimerChange = (e) => {
-    setInGameTime(e.target.value);
-  };
 
   return (
     <>
@@ -70,30 +47,6 @@ export default function Start() {
               </Box>
             </Paper>
           </Grid>
-          <Grid item>
-            <Paper>
-              <Box my={3} p={3}>
-                <form className={classes.container} noValidate>
-                  <TextField
-                    id="time"
-                    label="In game time"
-                    type="text"
-                    defaultValue={inGameTime}
-                    className={classes.textField}
-                    onChange={handleTimerChange}
-                    disabled={isActive}
-                  />
-                  <Button
-                    color="primary"
-                    variant="contained"
-                    onClick={handleTimerClick}
-                  >
-                    {isActive ? "Stop time sync" : "Start time sync"}
-                  </Button>
-                </form>
-              </Box>
-            </Paper>
-          </Grid>
         </Grid>
       </Container>
     </>
@@ -116,18 +69,3 @@ const useStyles = makeStyles(() => ({
     textAlign: "center",
   },
 }));
-/**
- * 
- * function useStickyState(defaultValue, key) {
-  const [value, setValue] = React.useState(() => {
-    const stickyValue = window.localStorage.getItem(key);
-    return stickyValue !== null
-      ? JSON.parse(stickyValue)
-      : defaultValue;
-  });
-  React.useEffect(() => {
-    window.localStorage.setItem(key, JSON.stringify(value));
-  }, [key, value]);
-  return [value, setValue];
-}
- */

@@ -54,6 +54,17 @@ export default function FormDialog() {
           )}
           <WeightSwitch />
           <DialogContentText>Weight in kg instead of lbs</DialogContentText>
+          <Button
+            onClick={() => {
+              localStorage.clear();
+              window.location.href = window.location.href;
+            }}
+            color="secondary"
+            variant="contained"
+            aria-label="Clear local storage"
+          >
+            <i>Clear local storage data</i>
+          </Button>
         </DialogContent>
         <DialogActions>
           <Button

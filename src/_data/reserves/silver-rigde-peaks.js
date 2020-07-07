@@ -11,31 +11,22 @@ export default {
     {
       name: "Turkey",
       times: [
-        {
-          from: 0,
-          to: 5,
-          status: status.resting,
-        },
-        {
-          from: 5,
-          to: 15,
-          status: status.feeding,
-        },
-        {
-          from: 15,
-          to: 16,
-          status: status.drinking,
-        },
-        {
-          from: 16,
-          to: 21,
-          status: status.feeding,
-        },
-        {
-          from: 21,
-          to: 0,
-          status: status.resting,
-        },
+        "00:00-05:00;Resting",
+        "05:00-15:00;Feeding",
+        "15:00-16:00;Drinking",
+        "16:00-21:00;Feeding",
+        "21:00-00:00;Resting",
+      ],
+    },
+    {
+      name: "Plains Bison",
+      times: [
+        "00:00-03:00;Resting",
+        "03:00-10:00;Feeding",
+        "10:00-11:00;Drinking",
+        "11:00-16:00;Resting",
+        "16:00-17:00;Drinking",
+        "17:00-00:00;Feeding",
       ],
     },
   ],
@@ -43,11 +34,11 @@ export default {
 
 /* 
 Turkey	
-  00:00 - 05:00	Resting
-	05:00 - 15:00	Feeding
-	15:00 - 16:00	Drinking
-	16:00 - 21:00	Feeding
-  21:00 - 00:00	Resting
+  00:00 - 05:00 Resting
+	05:00 - 15:00 Feeding
+	15:00 - 16:00 Drinking
+	16:00 - 21:00 Feeding
+  21:00 - 00:00 Resting
   
 Pronghorn	
   00:00 - 05:00	Resting
@@ -107,11 +98,12 @@ Rocky Mountain Elk
 	17:00 - 18:00	Drinking
   18:00 - 00:00	Feeding
   
-Plains Bison		
-  00:00 - 03:00 Resting  
-  03:00 - 10:00	Feeding
-	10:00 - 11:00	Drinking
-	11:00 - 16:00	Resting
-	16:00 - 17:00	Drinking
-  17:00 - 00:00	Feeding
+Plains Bison
+  00:00 - 03:00 Resting
+  03:00 - 10:00 Feeding
+  10:00 - 11:00 Drinking
+  11:00 - 16:00 Resting
+  16:00 - 17:00 Drinking
+  17:00 - 00:00 Feeding
+
   */

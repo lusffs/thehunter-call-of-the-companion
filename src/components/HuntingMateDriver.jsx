@@ -5,6 +5,7 @@ import huntingMate from "store/huntingMate";
 
 const SERVER_SECOND_VALUE = 3600 / 920; // 1h in game = 15:20 minutes realtime => 3.913 seconds per 1 real life second
 const LOCAL_STORAGE_KEY = "huntingMateState";
+
 export default function HuntingMateDriver() {
   const {
     state: { inGameSyncTime, isActive, clientSyncTime },
