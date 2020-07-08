@@ -12,6 +12,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 
 import backgroundImage from "assets/images/background2.jpg";
 import CrosshairIcon from "components/icons/Crosshair";
+import NeedZones from "components/NeedZones";
 
 export default function Start() {
   const classes = useStyles();
@@ -44,6 +45,7 @@ export default function Start() {
                 >
                   Animals
                 </Button>
+                <NeedZones />
               </Box>
             </Paper>
           </Grid>
