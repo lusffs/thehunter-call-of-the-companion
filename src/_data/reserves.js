@@ -2,7 +2,7 @@ export default [
   "Layton Lakes",
   "Hirschfelden",
   "Medved Taiga",
-  "Vurhogna Savanna",
+  "Vurhonga Savanna",
   "Parque Fernando",
   "Yukon Valley",
   "Cuatro Colinas",

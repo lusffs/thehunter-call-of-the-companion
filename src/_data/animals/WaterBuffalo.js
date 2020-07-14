@@ -5,7 +5,20 @@ export default {
   maxLevel: 9,
   callers: [],
   scents: [],
-  reserves: ["Parque Fernando"],
+  reserves: [
+    {
+      name: "Parque Fernando",
+      needZones: [
+        "00:00-05:00;Resting",
+        "05:00-10:00;Feeding",
+        "10:00-13:00;Drinking",
+        "13:00-17:00;Resting",
+        "17:00-21:00;Feeding",
+        "21:00-00:00;Drinking",
+      ],
+    },
+  ],
+  furTypes: ["Black;Common", "Brown;Common", "Orange;Common", "Albino;Rare"],
   trophyScore: {
     silver: 84.2,
     gold: 131.8,

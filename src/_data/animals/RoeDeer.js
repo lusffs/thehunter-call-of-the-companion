@@ -5,7 +5,31 @@ export default {
   maxLevel: 3,
   callers: ["Roe Deer Caller"],
   scents: [],
-  reserves: ["Cuatro Colinas", "Hirschfelden"],
+  reserves: [
+    {
+      name: "Cuatro Colinas",
+      needZones: [
+        "00:00-05:00;Resting",
+        "05:00-09:00;Feeding",
+        "09:00-13:00;Resting",
+        "13:00-17:00;Drinking",
+        "17:00-21:00;Feeding",
+        "21:00-00:00;Resting",
+      ],
+    },
+    {
+      name: "Hirschfelden",
+      needZones: [
+        "00:00-05:00;Resting",
+        "05:00-09:00;Feeding",
+        "09:00-13:00;Resting",
+        "13:00-17:00;Drinking",
+        "17:00-21:00;Feeding",
+        "21:00-00:00;Resting",
+      ],
+    },
+  ],
+  furTypes: ["Piebald;Rare", "Albino;Rare", "Melanistic;Rare"],
   trophyScore: {
     silver: 40.5,
     gold: 68.4,

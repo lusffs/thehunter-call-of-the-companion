@@ -3,9 +3,20 @@ export default {
   class: 1,
   name: "Cinnamon Teal",
   maxLevel: 3,
-  callers: ["Beacon Delixe Duck Caller"],
+  callers: ["Beacon Deluxe Duck Caller"],
   scents: [],
-  reserves: ["Parque Fernando"],
+  reserves: [
+    {
+      name: "Parque Fernando",
+      needZones: ["00:00-00:00;None"],
+    },
+  ],
+  furTypes: [
+    "Red;Common",
+    "Piebald;Uncommon",
+    "Beige;Uncommon",
+    "Melanistic;Rare",
+  ],
   trophyScore: {
     silver: 3.3,
     gold: 4,

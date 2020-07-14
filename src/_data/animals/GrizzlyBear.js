@@ -5,7 +5,20 @@ export default {
   maxLevel: 9,
   callers: ['Predator "Distressed Fawn" Caller'],
   scents: [],
-  reserves: ["Yukon Valley"],
+  reserves: [
+    {
+      name: "Yukon Valley",
+      needZones: [
+        "03:00-07:00;Drinking",
+        "07:00-11:00;Resting",
+        "11:00-15:00;Resting",
+        "15:00-19:00;Resting",
+        "19:00-23:00;Feeding",
+        "23:00-03:00;Feeding",
+      ],
+    },
+  ],
+  furTypes: ["Brown;Common", "Melanistic;Rare", "Albino;Rare"],
   trophyScore: {
     silver: 52.5,
     gold: 60.7,

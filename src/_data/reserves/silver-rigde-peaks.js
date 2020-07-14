@@ -1,8 +1,8 @@
-const status = {
-  resting: "Resting",
-  feeding: "Feeding",
-  drinking: "Drinking",
-};
+// const status = {
+//   resting: "Resting",
+//   feeding: "Feeding",
+//   drinking: "Drinking",
+// };
 
 export default {
   name: "Silver Ridge Peaks",

@@ -15,7 +15,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 
-import backgroundImage from "assets/images/background.jpg";
+import backgroundImage from "assets/images/background2.jpg";
 
 import animals from "_data/animals";
 

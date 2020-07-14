@@ -10,9 +10,9 @@ import Typography from "@material-ui/core/Typography";
 
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
-import backgroundImage from "assets/images/background2.jpg";
+import backgroundImage from "assets/images/background.jpg";
 import CrosshairIcon from "components/icons/Crosshair";
-import NeedZones from "components/NeedZones";
+// import NeedZones from "components/NeedZones";
 
 export default function Start() {
   const classes = useStyles();
@@ -45,7 +45,7 @@ export default function Start() {
                 >
                   Animals
                 </Button>
-                <NeedZones />
+                {/* <NeedZones /> */}
               </Box>
             </Paper>
           </Grid>

@@ -5,7 +5,24 @@ export default {
   maxLevel: 5,
   callers: [],
   scents: [],
-  reserves: ["Silver Ridge Peaks"],
+  reserves: [
+    {
+      name: "Silver Ridge Peaks",
+      needZones: [
+        "00:00-04:00;Resting",
+        "04:00-06:00;Feeding",
+        "06:00-08:00;Drinking",
+        "08:00-21:00;Feeding",
+        "21:00-00:00;Resting",
+      ],
+    },
+  ],
+  furTypes: [
+    "Black;Common",
+    "Brown;Common",
+    "Dark Brown;Common",
+    "Albino;Rare",
+  ],
   trophyScore: {
     silver: 90.3,
     gold: 132.7,

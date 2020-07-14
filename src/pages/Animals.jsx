@@ -22,9 +22,10 @@ import TableContainer from "@material-ui/core/TableContainer";
 import useStore from "global-hook-store";
 import settingsStore from "store/settings";
 
-import heroImage from "assets/images/518790_screenshots_20200623202515_1.jpg";
+import heroImage from "assets/images/background3.jpg";
 import animals from "_data/animals";
 import reserves from "_data/reserves";
+import CurrentNeedZone from "components/CurrentNeedZone";
 
 export default function Start() {
   const classes = useStyles();
@@ -179,7 +180,11 @@ export default function Start() {
                       if (selectedReserve === "all") {
                         return true;
                       }
-                      return animal.reserves.indexOf(selectedReserve) > -1;
+
+                      const reserves = animal.reserves.map((r) => {
+                        return r.name;
+                      });
+                      return reserves && reserves.indexOf(selectedReserve) > -1;
                     })
                     .map((animal, index) => (
                       <TableRow key={animal._id + index}>
@@ -193,6 +198,10 @@ export default function Start() {
                           <Typography variant="body2">
                             <i>{`Max level: ${animal.maxLevel}`}</i>
                           </Typography>
+                          <CurrentNeedZone
+                            animal={animal}
+                            reserve={selectedReserve}
+                          />
                         </TableCell>
                         <TableCell
                           align="right"

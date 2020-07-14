@@ -5,7 +5,19 @@ export default {
   maxLevel: 3,
   callers: ["Beacon Deluxe Duck Caller"],
   scents: [],
-  reserves: ["Layton Lakes"],
+  reserves: [
+    {
+      name: "Layton Lakes",
+      needZones: ["00:00-00:00;None"],
+    },
+  ],
+  furTypes: [
+    "Blonde;Common",
+    "Brown Hybrid;Common",
+    "Piebald;Uncommon",
+    "Melanistic;Rare",
+    "Luecistic;Rare",
+  ],
   trophyScore: {
     silver: 9.9,
     gold: 15.4,

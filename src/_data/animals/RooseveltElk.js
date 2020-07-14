@@ -5,7 +5,20 @@ export default {
   maxLevel: 5,
   callers: ["Elk Caller"],
   scents: [],
-  reserves: ["Layton Lakes"],
+  reserves: [
+    {
+      name: "Layton Lakes",
+      needZones: [
+        "00:00-05:00;Resting",
+        "05:00-09:00;Drinking",
+        "09:00-13:00;Feeding",
+        "13:00-17:00;Resting",
+        "17:00-21:00;Drinking",
+        "21:00-00:00;Resting",
+      ],
+    },
+  ],
+  furTypes: ["Piebald;Rare", "Albino;Rare", "Melanistic;Rare"],
   trophyScore: {
     silver: 128.7,
     gold: 272.7,

@@ -9,7 +9,20 @@ export default {
     'Deer "Grunt" Caller',
   ],
   scents: [],
-  reserves: ["Layton Lakes"],
+  reserves: [
+    {
+      name: "Layton Lakes",
+      needZones: [
+        "00:00-05:00;Resting",
+        "05:00-09:00;Feeding",
+        "09:00-12:00;Resting",
+        "12:00-15:00;Drinking",
+        "15:00-21:00;Feeding",
+        "21:00-00:00;Resting",
+      ],
+    },
+  ],
+  furTypes: ["Piebald;Rare", "Albino;Rare", "Melanistic;Rare"],
   trophyScore: {
     silver: 111.4,
     gold: 205.9,

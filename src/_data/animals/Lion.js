@@ -8,7 +8,18 @@ export default {
     'Predator "Distressed Fawn" Caller',
   ],
   scents: [],
-  reserves: ["Vurhogna Savanna"],
+  reserves: [
+    {
+      name: "Vurhonga Savanna",
+      needZones: [
+        "00:00-08:00;Feeding",
+        "08:00-12:00;Resting",
+        "12:00-15:00;Drinking",
+        "15:00-00:00;Resting",
+      ],
+    },
+  ],
+  furTypes: ["Blonde;Very Rare", "Dark Brown;Bugged?", "Albino;Very Rare"],
   trophyScore: {
     silver: 38,
     gold: 44,

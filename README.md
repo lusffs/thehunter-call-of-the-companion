@@ -57,3 +57,14 @@ Renew certificates with `certbot renew`
 https://pimylifeup.com/raspberry-pi-ssl-lets-encrypt/
 
 https://certbot.eff.org/lets-encrypt/pip-nginx
+
+## Special Thanks
+
+### Aaron
+
+- https://docs.google.com/spreadsheets/d/1bK_Ij_ivIQbmQvz0uH7ubLEODWnZ5YoEfkB21icBRxE/edit#gid=1506673761
+- https://streamelements.com/aaron01220/tip
+
+### tiltaaa
+
+- https://steamcommunity.com/sharedfiles/filedetails/?id=1767037181&searchtext=Need+zone

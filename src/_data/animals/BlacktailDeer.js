@@ -5,7 +5,20 @@ export default {
   maxLevel: 5,
   callers: ['Deer "Bleat" Caller', 'Deer "Grunt" Caller'],
   scents: [],
-  reserves: ["Layton Lakes"],
+  reserves: [
+    {
+      name: "Layton Lakes",
+      needZones: [
+        "00:00-05:00;Resting",
+        "05:00-09:00;Drinking",
+        "09:00-13:00;Resting",
+        "13:00-17:00;Feeding",
+        "17:00-21:00;Drinking",
+        "21:00-00:00;Resting",
+      ],
+    },
+  ],
+  furTypes: ["Piebald;Rare", "Albino;Rare", "Melanistic;Rare"],
   trophyScore: {
     silver: 76.9,
     gold: 134.4,

@@ -5,7 +5,30 @@ export default {
   maxLevel: 9,
   callers: ['Predator "Distressed Fawn" Caller'],
   scents: [],
-  reserves: ["Cuatro Colinas"],
+  reserves: [
+    {
+      name: "Cuatro Colinas",
+      needZones: [
+        "00:00-03:00;Drinking",
+        "03:00-07:00;Feeding",
+        "07:00-11:00;Resting",
+        "11:00-15:00;Resting",
+        "15:00-19:00;Resting",
+        "19:00-00:00;Drinking",
+      ],
+    },
+  ],
+  furTypes: [
+    "Grey;Common",
+    "Olive;Uncommon",
+    "Winter;Uncommon",
+    "Pristine;Uncommon",
+    "Albino;Rare",
+    "Melanistic;Rare",
+    "Fantasma;Mission",
+    "Ogro;Mission",
+    "Sombra;Mission",
+  ],
   trophyScore: {
     silver: 32,
     gold: 36,

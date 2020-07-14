@@ -1,7 +1,5 @@
 import React from "react";
 
-import Grid from "@material-ui/core/Grid";
-import Switch from "@material-ui/core/Switch";
 import Typography from "@material-ui/core/Typography";
 
 import useStore from "global-hook-store";

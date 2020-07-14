@@ -5,7 +5,20 @@ export default {
   maxLevel: 3,
   callers: [],
   scents: [],
-  reserves: ["Cuatro Colinas"],
+  reserves: [
+    {
+      name: "Cuatro Colinas",
+      needZones: [
+        "01:00-05:00;Resting",
+        "05:00-11:00;Feeding",
+        "11:00-14:00;Drinking",
+        "14:00-16:00;Resting",
+        "16:00-22:00;Feeding",
+        "22:00-01:00;Feeding",
+      ],
+    },
+  ],
+  furTypes: ["Melanistic;Rare", "Albino;Rare"],
   trophyScore: {
     silver: 3,
     gold: 5,

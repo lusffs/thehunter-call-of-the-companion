@@ -5,7 +5,42 @@ export default {
   maxLevel: 5,
   callers: ["Moose Caller"],
   scents: [],
-  reserves: ["Yukon Valley", "Medved Taiga", "Layton Lakes"],
+  reserves: [
+    {
+      name: "Yukon Valley",
+      needZones: [
+        "00:00-05:00;Resting",
+        "05:00-09:00;Feeding",
+        "09:00-13:30;Drinking",
+        "13:30-17:00;Resting",
+        "17:00-21:00;Feeding",
+        "21:00-00:00;Resting",
+      ],
+    },
+    {
+      name: "Medved Taiga",
+      needZones: [
+        "00:00-05:00;Resting",
+        "05:00-09:00;Feeding",
+        "09:00-13:30;Drinking",
+        "13:30-17:00;Resting",
+        "17:00-21:00;Feeding",
+        "21:00-00:00;Resting",
+      ],
+    },
+    {
+      name: "Layton Lakes",
+      needZones: [
+        "00:00-05:00;Resting",
+        "05:00-09:00;Feeding",
+        "09:00-13:30;Drinking",
+        "13:30-17:00;Resting",
+        "17:00-21:00;Feeding",
+        "21:00-00:00;Resting",
+      ],
+    },
+  ],
+  furTypes: ["Piebald;Rare", "Albino;Rare", "Melanistic;Rare"],
   trophyScore: {
     silver: 89.7,
     gold: 204.6,

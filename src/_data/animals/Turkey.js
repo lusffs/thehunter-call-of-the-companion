@@ -5,7 +5,25 @@ export default {
   maxLevel: 3,
   callers: ["Wild Turkey Crow Caller", "Wild Turkey Mouth Caller"],
   scents: [],
-  reserves: ["Silver Ridge Peaks"],
+  reserves: [
+    {
+      name: "Silver Ridge Peaks",
+      needZones: [
+        "00:00-05:00;Resting",
+        "05:00-15:00;Feeding",
+        "15:00-16:00;Drinking",
+        "16:00-21:00;Feeding",
+        "21:00-00:00;Resting",
+      ],
+    },
+  ],
+  furTypes: [
+    "Grey;Common",
+    "Light Brown;Rare",
+    "Luecistic;Rare",
+    "Albino;Rare",
+    "Melanistic;Rare",
+  ],
   trophyScore: {
     silver: 3.3,
     gold: 4,

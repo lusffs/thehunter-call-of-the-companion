@@ -5,14 +5,25 @@ export default {
   maxLevel: 9,
   callers: ['Predator "Distressed Fawn" Caller'],
   scents: [],
-  reserves: ["Yukon Valley"],
-  diamondRequirement: {
-    trophyRating: 39,
-    maxWeight: {
-      kg: 75,
-      lbs: 165,
+  reserves: [
+    {
+      name: "Yukon Valley",
+      needZones: [
+        "00:00-03:00;Drinking",
+        "03:00-07:00;Feeding",
+        "07:00-11:00;Resting",
+        "11:00-19:00;Resting",
+        "19:00-23:00;Feeding",
+        "23:00-00:00;Drinking",
+      ],
     },
-  },
+  ],
+  furTypes: [
+    "Red Brown;Uncommon",
+    "Egg white;Uncommon",
+    "Melanistic;Rare",
+    "Albino;Rare",
+  ],
   trophyScore: {
     silver: 32,
     gold: 36,
