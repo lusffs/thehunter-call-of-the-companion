@@ -11,8 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
 import backgroundImage from "assets/images/background.jpg";
-import CrosshairIcon from "components/icons/Crosshair";
-// import NeedZones from "components/NeedZones";
+import LogoIcon from "assets/images/logo192.png";
 
 export default function Start() {
   const classes = useStyles();
@@ -20,7 +19,7 @@ export default function Start() {
   return (
     <>
       <Box className={classes.hero}>
-        <CrosshairIcon style={{ width: "auto", height: "10vh" }} />
+        <img src={LogoIcon} alt="logo" />
         <Box mx={3}>
           <Typography color="primary" variant="h3">
             theHunter
