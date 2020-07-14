@@ -3,7 +3,8 @@ import React from "react";
 import useStore from "global-hook-store";
 import huntingMate from "store/huntingMate";
 
-const SERVER_SECOND_VALUE = 3600 / 920; // 1h in game = 15:20 minutes realtime => 3.913 seconds per 1 real life second
+// const SERVER_SECOND_VALUE = 3600 / 920; // Pre-patch 2020-07-14: 1h in game = 15:20 minutes realtime => 3.913 seconds per 1 real life second
+const SERVER_SECOND_VALUE = 3600 / 896; // 1h in game = 14:56 minutes realtime => 4.0179 seconds per 1 real life second
 const LOCAL_STORAGE_KEY = "huntingMateState";
 
 export default function HuntingMateDriver() {
