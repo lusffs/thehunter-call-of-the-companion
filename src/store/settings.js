@@ -3,7 +3,7 @@ import { createStore } from "global-hook-store";
 export default createStore(
   {
     isRightHanded: true,
-    useKiloWeightUnit: true,
+
     timeSyncModalOpen: false,
   },
   {
@@ -11,10 +11,7 @@ export default createStore(
       ...state,
       isRightHanded: !state.isRightHanded,
     }),
-    toggleWeightUnit: (state) => ({
-      ...state,
-      useKiloWeightUnit: !state.useKiloWeightUnit,
-    }),
+
     setTimeSyncModalOpen: (state, timeSyncModalOpen) => ({
       ...state,
       timeSyncModalOpen,

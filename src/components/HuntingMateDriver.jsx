@@ -14,14 +14,17 @@ export default function HuntingMateDriver() {
       isActive,
       clientSyncTime,
       scentEliminatorSyncTime,
+      useKiloWeightUnit,
     },
     actions: { setInGameClock, setInitialState },
   } = useStore(huntingMate);
 
+  // Read from localstorage and set as initial state
   React.useEffect(() => {
     setInitialState(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || {});
   }, [setInitialState]);
 
+  // Preserve to localstorage
   React.useEffect(() => {
     localStorage.setItem(
       LOCAL_STORAGE_KEY,
@@ -30,9 +33,16 @@ export default function HuntingMateDriver() {
         inGameSyncTime,
         isActive,
         scentEliminatorSyncTime,
+        useKiloWeightUnit,
       })
     );
-  }, [clientSyncTime, inGameSyncTime, isActive, scentEliminatorSyncTime]);
+  }, [
+    clientSyncTime,
+    inGameSyncTime,
+    isActive,
+    scentEliminatorSyncTime,
+    useKiloWeightUnit,
+  ]);
 
   React.useEffect(() => {
     let interval = null;

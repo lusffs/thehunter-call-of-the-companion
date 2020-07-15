@@ -5,13 +5,13 @@ import Switch from "@material-ui/core/Switch";
 import Typography from "@material-ui/core/Typography";
 
 import useStore from "global-hook-store";
-import settingsStore from "store/settings";
+import huntingMateStore from "store/huntingMate";
 
 export default function RightHandSwitch() {
   const {
     state: { useKiloWeightUnit },
     actions: { toggleWeightUnit },
-  } = useStore(settingsStore);
+  } = useStore(huntingMateStore);
 
   const toggleChecked = () => {
     toggleWeightUnit();
