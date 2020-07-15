@@ -44,7 +44,6 @@ export default function Start() {
                 >
                   Animals
                 </Button>
-                {/* <NeedZones /> */}
               </Box>
             </Paper>
           </Grid>

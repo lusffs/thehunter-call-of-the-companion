@@ -9,7 +9,12 @@ const LOCAL_STORAGE_KEY = "huntingMateState";
 
 export default function HuntingMateDriver() {
   const {
-    state: { inGameSyncTime, isActive, clientSyncTime },
+    state: {
+      inGameSyncTime,
+      isActive,
+      clientSyncTime,
+      scentEliminatorSyncTime,
+    },
     actions: { setInGameClock, setInitialState },
   } = useStore(huntingMate);
 
@@ -24,9 +29,10 @@ export default function HuntingMateDriver() {
         clientSyncTime,
         inGameSyncTime,
         isActive,
+        scentEliminatorSyncTime,
       })
     );
-  }, [clientSyncTime, inGameSyncTime, isActive]);
+  }, [clientSyncTime, inGameSyncTime, isActive, scentEliminatorSyncTime]);
 
   React.useEffect(() => {
     let interval = null;

@@ -25,7 +25,7 @@ const useStyles = makeStyles(({ palette, spacing }) => ({
   },
 }));
 
-export default function TimeSync() {
+export default function TimeSync({ onClose }) {
   const classes = useStyles();
   const [timeIndex, setTimeIndex] = useState(0);
   const [time, setTime] = useState("1200");
@@ -57,6 +57,7 @@ export default function TimeSync() {
   const handleAccept = () => {
     setTimeIndex(4);
     startHuntingMate(time.substr(0, 2) + ":" + time.substr(2, 2));
+    onClose();
   };
 
   const renderButton = (inputNumber) => {

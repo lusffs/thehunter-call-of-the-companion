@@ -1,9 +1,12 @@
 import React from "react";
 
+import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
+
+import TimerOffIcon from "@material-ui/icons/TimerOff";
 
 import TimeSync from "./TimeSync";
 import useStore from "global-hook-store";
@@ -18,6 +21,7 @@ export default function FormDialog() {
 
   const {
     state: { isActive },
+    actions: { setIsActive },
   } = useStore(huntingMateStore);
 
   const handleClose = () => {
@@ -36,12 +40,26 @@ export default function FormDialog() {
         <DialogContentText>
           Sync the time with your hunt to see needzones in realtime.
         </DialogContentText>
-        <TimeSync />
+        <TimeSync onClose={handleClose} />
         {isActive && (
-          <DialogContentText>
-            The sync timer is currently running. Use the button to re-sync the
-            timer if you rest in game.
-          </DialogContentText>
+          <>
+            <DialogContentText>
+              The sync timer is currently running. Use the button to re-sync the
+              timer if you rest in game.
+            </DialogContentText>
+
+            <Button
+              color="inherit"
+              variant="outlined"
+              onClick={() => {
+                setIsActive(false);
+              }}
+              aria-label="Turn off time sync"
+              fullWidth
+            >
+              <TimerOffIcon /> {"Turn off time sync"}
+            </Button>
+          </>
         )}
       </DialogContent>
     </Dialog>

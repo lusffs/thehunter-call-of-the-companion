@@ -156,6 +156,16 @@ export default function AnimalFinder() {
             <DialogContent>
               <DialogContentText>{`Class: ${selectedAnimal.class}`}</DialogContentText>
               <DialogContentText>{`Max Weight: ${selectedAnimal.maxWeight.kg} kg`}</DialogContentText>
+              <Typography>Reserves:</Typography>
+              <ul>
+                {selectedAnimal.reserves.map((reserve, index) => {
+                  return (
+                    <li key={index}>
+                      <b>{reserve.name}</b>
+                    </li>
+                  );
+                })}
+              </ul>
               <Typography>
                 {`Silver: ${selectedAnimal.trophyScore.silver}`}
               </Typography>
@@ -165,6 +175,17 @@ export default function AnimalFinder() {
               <Typography>
                 {`Diamond: ${selectedAnimal.trophyScore.diamond}`}
               </Typography>
+              <Typography>Fur types:</Typography>
+              <ul>
+                {selectedAnimal.furTypes.map((type, index) => {
+                  return (
+                    <li key={index}>
+                      <b>{type.split(";")[0]}</b>
+                      <i>{` (${type.split(";")[1]})`}</i>
+                    </li>
+                  );
+                })}
+              </ul>
             </DialogContent>
             <DialogActions>
               <Button

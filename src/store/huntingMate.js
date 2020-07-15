@@ -6,6 +6,7 @@ export default createStore(
     isActive: false,
     clientSyncTime: null,
     inGameSyncTime: null,
+    scentEliminatorSyncTime: null,
   },
   {
     setInitialState: (state, initialLocalStorageState) => ({
@@ -22,6 +23,10 @@ export default createStore(
         0,
         0
       ),
+    }),
+    setScentCoverTimer: (state, scentEliminatorSyncTime) => ({
+      ...state,
+      scentEliminatorSyncTime,
     }),
     setIsActive: (state, isActive) => ({
       ...state,
