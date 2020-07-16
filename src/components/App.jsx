@@ -12,6 +12,7 @@ import PageRouter from "pages/_router";
 import ScrollToTop from "components/ScrollToTop";
 import HuntingMateDriver from "./HuntingMateDriver";
 import TimeSyncModal from "./TimeSyncModal";
+import AnimalInfoDialog from "./AnimalInfoDialog";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <PageRouter />
           <Footer />
         </Grid>
+        <AnimalInfoDialog />
       </ThemeProvider>
     </Router>
   );

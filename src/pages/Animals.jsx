@@ -113,7 +113,13 @@ export default function Start() {
             </Box>
           </Grid>
           <Grid item xs={12} md={8}>
-            <Grid container alignContent="center" spacing={0} component={Paper}>
+            <Grid
+              className={classes.animalsContainer}
+              container
+              alignContent="center"
+              spacing={0}
+              component={Paper}
+            >
               {animals
                 .sort((a, b) => {
                   // Always sort by name before other sorts
@@ -162,7 +168,7 @@ export default function Start() {
   );
 }
 
-const useStyles = makeStyles(({ spacing }) => ({
+const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   hero: {
     backgroundSize: "cover",
     backgroundImage: `url(${heroImage})`,
@@ -180,5 +186,12 @@ const useStyles = makeStyles(({ spacing }) => ({
   formControl: {
     margin: spacing(1),
     minWidth: 120,
+  },
+  animalsContainer: {
+    [breakpoints.only("xs")]: {
+      "&> *:last-child": {
+        border: 0,
+      },
+    },
   },
 }));

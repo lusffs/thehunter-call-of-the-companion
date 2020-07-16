@@ -4,20 +4,16 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
-import Dialog from "@material-ui/core/Dialog";
 import Toolbar from "@material-ui/core/Toolbar";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
-
-import backgroundImage from "assets/images/background2.jpg";
+import useStore from "global-hook-store";
 
 import animals from "_data/animals";
+import settingsStore from "store/settings";
+import backgroundImage from "assets/images/background2.jpg";
 
 const firstLetters = animals.reduce((accumulator, animal) => {
   for (const n of animal.name.split(" ")) {
@@ -32,8 +28,16 @@ const firstLetters = animals.reduce((accumulator, animal) => {
 export default function AnimalFinder() {
   const classes = useStyles();
   const [selectedCharacter, setSelectedCharacter] = useState();
-  const [selectedAnimal, setSelectedAnimal] = useState(null);
-  const [dialogOpen, setDialogOpen] = useState(false);
+
+  const {
+    actions: { setAnimalInfoModalOpen, setAnimalInfoSelectedAnimal },
+  } = useStore(settingsStore);
+
+  const handleMoreInfoClick = (animal) => {
+    setAnimalInfoSelectedAnimal(animal).then(() => {
+      setAnimalInfoModalOpen(true);
+    });
+  };
 
   return (
     <>
@@ -105,10 +109,7 @@ export default function AnimalFinder() {
                           className={classes.animalButton}
                           variant="contained"
                           fullWidth
-                          onClick={() => {
-                            setSelectedAnimal(animal);
-                            setDialogOpen(true);
-                          }}
+                          onClick={() => handleMoreInfoClick(animal)}
                         >
                           {animal.name.charAt(0) === selectedCharacter
                             ? animal.name
@@ -139,79 +140,6 @@ export default function AnimalFinder() {
           </Grid>
         )}
       </Container>
-      <Dialog
-        open={dialogOpen}
-        onClose={() => {
-          setDialogOpen(false);
-        }}
-        fullWidth
-        maxWidth="xs"
-        aria-labelledby="form-dialog-title"
-      >
-        {selectedAnimal && (
-          <>
-            <DialogTitle id="form-dialog-title">
-              {selectedAnimal.name}
-            </DialogTitle>
-            <DialogContent>
-              <DialogContentText>{`Class: ${selectedAnimal.class}`}</DialogContentText>
-              <DialogContentText>{`Max Weight: ${selectedAnimal.maxWeight.kg} kg`}</DialogContentText>
-              <Typography>Reserves:</Typography>
-              <ul>
-                {selectedAnimal.reserves.map((reserve, index) => {
-                  return (
-                    <li key={index}>
-                      <b>{reserve.name}</b>
-                    </li>
-                  );
-                })}
-              </ul>
-              <Typography>
-                {`Silver: ${selectedAnimal.trophyScore.silver}`}
-              </Typography>
-              <Typography>
-                {`Gold: ${selectedAnimal.trophyScore.gold}`}
-              </Typography>
-              <Typography>
-                {`Diamond: ${selectedAnimal.trophyScore.diamond}`}
-              </Typography>
-              <Typography>Fur types:</Typography>
-              <ul>
-                {selectedAnimal.furTypes.map((type, index) => {
-                  return (
-                    <li key={index}>
-                      <b>{type.split(";")[0]}</b>
-                      <i>{` (${type.split(";")[1]})`}</i>
-                    </li>
-                  );
-                })}
-              </ul>
-            </DialogContent>
-            <DialogActions>
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => {
-                  setDialogOpen(false);
-                  setSelectedCharacter("");
-                }}
-              >
-                <KeyboardBackspaceIcon className={classes.backIcon} />
-                {"A-Z"}
-              </Button>
-              <Button
-                onClick={() => {
-                  setDialogOpen(false);
-                }}
-                color="primary"
-                variant="contained"
-              >
-                Close
-              </Button>
-            </DialogActions>
-          </>
-        )}
-      </Dialog>
     </>
   );
 }
