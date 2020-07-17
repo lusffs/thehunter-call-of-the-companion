@@ -127,42 +127,46 @@ export default function AnimalSummaryCard({ animal, reserve }) {
           </Grid>
 
           <Collapse in={!collapsed}>
-            <Grid container direction="row">
-              <Grid className={classes.grow} item>
-                <Grid container direction="column">
-                  <Grid item>
-                    <CurrentNeedZone animal={animal} reserve={reserve} />
-                  </Grid>
-                  <Grid item>
-                    <Typography variant="body2">
-                      <b>{"Max weight:"}</b>
-                      {renderWeight(animal.maxWeight)}
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography variant="body2">
-                      <b>{"Max level:"}</b>
-                      {` ${animal.maxLevel}`}
-                    </Typography>
-                  </Grid>
-                </Grid>
+            <Grid container direction="column">
+              <Grid item>
+                <CurrentNeedZone animal={animal} reserve={reserve} />
               </Grid>
               <Grid item>
-                <Grid
-                  className={classes.fullHeight}
-                  container
-                  direction="column"
-                  justify="flex-end"
-                >
+                <Grid container direction="row">
+                  <Grid className={classes.grow} item>
+                    <Grid container direction="column">
+                      <Grid item>
+                        <Typography variant="body2">
+                          <b>{"Max weight:"}</b>
+                          {renderWeight(animal.maxWeight)}
+                        </Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography variant="body2">
+                          <b>{"Max level:"}</b>
+                          {` ${animal.maxLevel}`}
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
                   <Grid item>
-                    <Typography variant="body1" align="right">
-                      <b>
-                        <span role="img" aria-label="Diamond">
-                          💎
-                        </span>{" "}
-                        {animal.trophyScore.diamond}
-                      </b>
-                    </Typography>
+                    <Grid
+                      className={classes.fullHeight}
+                      container
+                      direction="column"
+                      justify="flex-end"
+                    >
+                      <Grid item>
+                        <Typography variant="body1" align="right">
+                          <b>
+                            <span role="img" aria-label="Diamond">
+                              💎
+                            </span>{" "}
+                            {animal.trophyScore.diamond}
+                          </b>
+                        </Typography>
+                      </Grid>
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>

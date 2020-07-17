@@ -18,21 +18,36 @@ export default function CurrentNeedZone({ animal, reserve }) {
     return res.name === reserve;
   });
 
-  return !activeReserve ? null : (
-    <Typography variant="body2">
-      {activeReserve.needZones
-        .filter((timeSpan) => {
-          const t = timeSpan.split(";")[0];
+  if (!activeReserve || !inGameClock) {
+    return null;
+  }
 
-          return (
-            inGameClock >= t.split("-")[0] &&
-            (inGameClock < t.split("-")[1] || t.split("-")[1] === "00:00")
-          );
-        })
-        .map((b, i) => {
-          const status = b.split(";");
-          return <span key={i}>{`${status[1]} (${status[0]})`}</span>;
-        })}
+  const needZones = activeReserve.needZones;
+
+  let currentIndex = needZones.length - 1;
+
+  for (let i = currentIndex; i >= 0; i--) {
+    const needZone = needZones[i];
+    const t = needZone.split(";")[0];
+    const clockValue = parseInt(`1${inGameClock.replace(":", "")}`);
+    const needZoneValue = parseInt(`1${t.split("-")[0].replace(":", "")}`);
+
+    if (clockValue >= needZoneValue) {
+      currentIndex = i;
+      break;
+    }
+  }
+
+  const nextIndex =
+    currentIndex === needZones.length - 1 ? 0 : currentIndex + 1;
+
+  const status = needZones[currentIndex].split(";");
+  const nextStatus = needZones[nextIndex].split(";");
+
+  return (
+    <Typography variant="body2">
+      {`${status[1]} (${status[0]}) ➡ `}
+      <i>{nextStatus[1]}</i>
     </Typography>
   );
 }
