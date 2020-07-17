@@ -1,14 +1,15 @@
 import React from "react";
-
 import { Link as RouterLink } from "react-router-dom";
+
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-
 import makeStyles from "@material-ui/core/styles/makeStyles";
+
+import ReserveSelection from "components/ReserveSelection";
 
 import backgroundImage from "assets/images/background.jpg";
 import LogoIcon from "assets/images/logo192.png";
@@ -25,6 +26,23 @@ export default function Start() {
             theHunter
           </Typography>
           <Typography variant="h4">Call of the Companion</Typography>
+          <Box mx={3} mt={2} component={Paper} p={2}>
+            <div>
+              <ReserveSelection />
+            </div>
+            <div>
+              <Button
+                color="primary"
+                variant="contained"
+                component={RouterLink}
+                to="/animals"
+                size="large"
+                fullWidth
+              >
+                Start hunting!
+              </Button>
+            </div>
+          </Box>
         </Box>
       </Box>
       <Container maxWidth="md">

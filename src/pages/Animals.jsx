@@ -7,27 +7,28 @@ import Select from "@material-ui/core/Select";
 import Toolbar from "@material-ui/core/Toolbar";
 import MenuItem from "@material-ui/core/MenuItem";
 import Container from "@material-ui/core/Container";
-
 import Typography from "@material-ui/core/Typography";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
-import heroImage from "assets/images/background3.jpg";
-import animals from "_data/animals";
-import reserves from "_data/reserves";
+import useStore from "global-hook-store";
+import huntingMateStore from "store/huntingMate";
+
 import AnimalSummaryCard from "components/AnimalSummaryCard";
+
+import animals from "_data/animals";
+import heroImage from "assets/images/background3.jpg";
 
 export default function Start() {
   const classes = useStyles();
-  const [selectedReserve, setSelectedReserve] = useState("Silver Ridge Peaks");
   const [selectedSorting, setSelectedSorting] = useState("class");
   const [headerHeight, setHeaderHeight] = useState(0);
   const toolBarRef = useRef(null);
 
-  const handleReserveChange = (event) => {
-    setSelectedReserve(event.target.value);
-  };
+  const {
+    state: { selectedReserve },
+  } = useStore(huntingMateStore);
 
   const handleSortingChange = (event) => {
     setSelectedSorting(event.target.value);
@@ -63,31 +64,6 @@ export default function Start() {
               <Typography gutterBottom variant="h6">
                 Filters
               </Typography>
-              <FormControl variant="outlined" className={classes.formControl}>
-                <InputLabel id="selected-reserve-label" color="secondary">
-                  Selected Reserve
-                </InputLabel>
-                <Select
-                  labelId="selected-reserve-label"
-                  id="selected-reserve"
-                  value={selectedReserve}
-                  onChange={handleReserveChange}
-                  label="Selected Reserve"
-                  displayEmpty
-                  color="secondary"
-                >
-                  <MenuItem value="all">
-                    <em>All reserves</em>
-                  </MenuItem>
-                  {reserves.map((reserve, index) => {
-                    return (
-                      <MenuItem key={index} value={reserve}>
-                        {reserve}
-                      </MenuItem>
-                    );
-                  })}
-                </Select>
-              </FormControl>
               <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel id="selected-reserve-label" color="secondary">
                   Order by
@@ -181,11 +157,6 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
     flexDirection: "column",
     justifyContent: "center",
     textAlign: "center",
-  },
-
-  formControl: {
-    margin: spacing(1),
-    minWidth: 120,
   },
   animalsContainer: {
     [breakpoints.only("xs")]: {

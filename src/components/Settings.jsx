@@ -13,11 +13,13 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 
 import WeightSwitch from "components/WeightSwitch";
 import RightHandSwitch from "components/RightHandSwitch";
+import ReserveSelection from "components/ReserveSelection";
 
 export default function FormDialog() {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -54,6 +56,9 @@ export default function FormDialog() {
           )}
           <WeightSwitch />
           <DialogContentText>Weight in kg instead of lbs</DialogContentText>
+          <div>
+            <ReserveSelection />
+          </div>
           <Button
             onClick={() => {
               localStorage.clear();

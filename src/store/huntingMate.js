@@ -8,6 +8,7 @@ export default createStore(
     inGameSyncTime: null,
     scentEliminatorSyncTime: null,
     useKiloWeightUnit: true,
+    selectedReserve: "all",
   },
   {
     setInitialState: (state, initialLocalStorageState) => ({
@@ -36,6 +37,10 @@ export default createStore(
     setInGameClock: (state, inGameClock) => ({
       ...state,
       inGameClock,
+    }),
+    setSelectedReserve: (state, selectedReserve) => ({
+      ...state,
+      selectedReserve,
     }),
     toggleWeightUnit: (state) => ({
       ...state,

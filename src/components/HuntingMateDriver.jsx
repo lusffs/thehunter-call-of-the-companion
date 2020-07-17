@@ -15,6 +15,7 @@ export default function HuntingMateDriver() {
       clientSyncTime,
       scentEliminatorSyncTime,
       useKiloWeightUnit,
+      selectedReserve,
     },
     actions: { setInGameClock, setInitialState },
   } = useStore(huntingMate);
@@ -34,6 +35,7 @@ export default function HuntingMateDriver() {
         isActive,
         scentEliminatorSyncTime,
         useKiloWeightUnit,
+        selectedReserve,
       })
     );
   }, [
@@ -42,6 +44,7 @@ export default function HuntingMateDriver() {
     isActive,
     scentEliminatorSyncTime,
     useKiloWeightUnit,
+    selectedReserve,
   ]);
 
   React.useEffect(() => {
