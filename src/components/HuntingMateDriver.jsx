@@ -10,6 +10,7 @@ const LOCAL_STORAGE_KEY = "huntingMateState";
 export default function HuntingMateDriver() {
   const {
     state: {
+      inGameClock,
       inGameSyncTime,
       isActive,
       clientSyncTime,
@@ -58,23 +59,25 @@ export default function HuntingMateDriver() {
           serverTime.getMilliseconds() + msSinceStart * SERVER_SECOND_VALUE
         );
 
-        setInGameClock(
-          `${
-            serverTime.getHours() < 10
-              ? `0${serverTime.getHours()}`
-              : serverTime.getHours()
-          }:${
-            serverTime.getMinutes() < 10
-              ? `0${serverTime.getMinutes()}`
-              : serverTime.getMinutes()
-          }`
-        );
+        const timeString = `${
+          serverTime.getHours() < 10
+            ? `0${serverTime.getHours()}`
+            : serverTime.getHours()
+        }:${
+          serverTime.getMinutes() < 10
+            ? `0${serverTime.getMinutes()}`
+            : serverTime.getMinutes()
+        }`;
+
+        if (timeString !== inGameClock) {
+          setInGameClock(timeString);
+        }
       }, 250);
     } else if (!isActive) {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [isActive, clientSyncTime, inGameSyncTime, setInGameClock]);
+  }, [isActive, clientSyncTime, inGameSyncTime, setInGameClock, inGameClock]);
 
   return null;
 }

@@ -46,7 +46,7 @@ export default function Start() {
       <Box className={classes.hero}>
         <Box mx={3}>
           <Typography color="primary" variant="h3">
-            Animals
+            {selectedReserve === "all" ? "All Reserves" : selectedReserve}
           </Typography>
         </Box>
       </Box>

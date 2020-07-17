@@ -2,17 +2,17 @@ import React, { useState } from "react";
 
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
+import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import useStore from "global-hook-store";
-import huntingMateStore from "store/huntingMate";
 import settingsStore from "store/settings";
+import huntingMateStore from "store/huntingMate";
 
 import CurrentNeedZone from "components/CurrentNeedZone";
 
@@ -23,6 +23,9 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
     },
   },
   grow: { flexGrow: 1 },
+  easeTransition: {
+    transition: "all 0.2s ease-in",
+  },
   centeredVertical: {
     flexDirection: "column",
     justifyContent: "center",
@@ -31,6 +34,12 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   pointer: { cursor: "pointer" },
   fullHeight: { height: "100%" },
   smallFont: { fontSize: "1rem" },
+  collapseIcon: {
+    transition: "transform 0.2s ease-in-out",
+  },
+  flip: {
+    transform: "scaleY(-1)",
+  },
 }));
 
 export default function AnimalSummaryCard({ animal, reserve }) {
@@ -79,7 +88,9 @@ export default function AnimalSummaryCard({ animal, reserve }) {
                 item
               >
                 <Typography
-                  className={collapsed ? classes.smallFont : ""}
+                  className={`${classes.easeTransition} ${
+                    collapsed ? classes.smallFont : ""
+                  }`}
                   variant="h6"
                 >
                   <span
@@ -97,7 +108,11 @@ export default function AnimalSummaryCard({ animal, reserve }) {
                   edge="start"
                   onClick={handleCollapseToggle}
                 >
-                  {collapsed ? <ExpandMoreIcon /> : <ExpandLessIcon />}
+                  <ExpandLessIcon
+                    className={`${classes.collapseIcon} ${
+                      collapsed ? classes.flip : ""
+                    }`}
+                  />
                 </IconButton>
                 <IconButton
                   size="small"
@@ -110,7 +125,8 @@ export default function AnimalSummaryCard({ animal, reserve }) {
               </Grid>
             </Grid>
           </Grid>
-          {!collapsed && (
+
+          <Collapse in={!collapsed}>
             <Grid container direction="row">
               <Grid className={classes.grow} item>
                 <Grid container direction="column">
@@ -151,7 +167,7 @@ export default function AnimalSummaryCard({ animal, reserve }) {
                 </Grid>
               </Grid>
             </Grid>
-          )}
+          </Collapse>
         </Grid>
       </Box>
     </Grid>
