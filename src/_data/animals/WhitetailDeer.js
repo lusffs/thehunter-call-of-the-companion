@@ -13,12 +13,11 @@ export default {
     {
       name: "Layton Lakes",
       needZones: [
-        "00:00-05:00;Resting",
         "05:00-09:00;Feeding",
         "09:00-12:00;Resting",
         "12:00-15:00;Drinking",
         "15:00-21:00;Feeding",
-        "21:00-00:00;Resting",
+        "21:00-05:00;Resting",
       ],
     },
   ],

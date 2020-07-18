@@ -10,9 +10,7 @@ export default {
       name: "Medved Taiga",
       needZones: [
         "00:00-07:00;Feeding",
-        "07:00-11:00;Resting",
-        "11:00-15:00;Resting",
-        "15:00-19:00;Resting",
+        "07:00-19:00;Resting",
         "19:00-00:00;Drinking",
       ],
     },

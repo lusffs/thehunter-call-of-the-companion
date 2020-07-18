@@ -9,11 +9,10 @@ export default {
     {
       name: "Silver Ridge Peaks",
       needZones: [
-        "00:00-05:00;Resting",
         "05:00-15:00;Feeding",
         "15:00-16:00;Drinking",
         "16:00-21:00;Feeding",
-        "21:00-00:00;Resting",
+        "21:00-05:00;Resting",
       ],
     },
   ],

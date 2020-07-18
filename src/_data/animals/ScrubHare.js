@@ -11,8 +11,7 @@ export default {
       needZones: [
         "00:00-04:00;Drinking",
         "04:00-09:00;Feeding",
-        "09:00-12:00;Resting",
-        "12:00-15:00;Resting",
+        "09:00-15:00;Resting",
         "15:00-20:00;Feeding",
         "20:00-00:00;Resting",
       ],

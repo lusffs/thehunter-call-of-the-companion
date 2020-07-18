@@ -9,34 +9,31 @@ export default {
     {
       name: "Cuatro Colinas",
       needZones: [
-        "00:00-05:00;Resting",
         "05:00-09:00;Drinking",
         "09:00-13:00;Resting",
         "13:00-17:00;Feeding",
         "17:00-21:00;Drinking",
-        "21:00-00:00;Resting",
+        "21:00-05:00;Resting",
       ],
     },
     {
       name: "Parque Fernando",
       needZones: [
-        "00:00-05:00;Resting",
         "05:00-09:00;Drinking",
         "09:00-13:00;Resting",
         "13:00-17:00;Feeding",
         "17:00-21:00;Drinking",
-        "21:00-00:00;Resting",
+        "21:00-05:00;Resting",
       ],
     },
     {
       name: "Hirschfelden",
       needZones: [
-        "00:00-05:00;Resting",
         "05:00-09:00;Drinking",
         "09:00-13:00;Resting",
         "13:00-17:00;Feeding",
         "17:00-21:00;Drinking",
-        "21:00-00:00;Resting",
+        "21:00-05:00;Resting",
       ],
     },
   ],

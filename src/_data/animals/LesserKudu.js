@@ -10,10 +10,8 @@ export default {
       name: "Vurhonga Savanna",
       needZones: [
         "00:00-04:00;Drinking",
-        "04:00-07:00;Feeding",
-        "07:00-10:00;Feeding",
-        "10:00-14:00;Resting",
-        "14:00-19:00;Resting",
+        "04:00-10:00;Feeding",
+        "10:00-19:00;Resting",
         "19:00-00:00;Feeding",
       ],
     },

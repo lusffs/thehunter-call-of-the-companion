@@ -10,9 +10,7 @@ export default {
       name: "Cuatro Colinas",
       needZones: [
         "03:00-07:00;Feeding",
-        "07:00-11:00;Resting",
-        "11:00-15:00;Resting",
-        "15:00-19:00;Resting",
+        "07:00-19:00;Resting",
         "19:00-23:00;Feeding",
         "23:00-03:00;Drinking",
       ],
@@ -21,9 +19,7 @@ export default {
       name: "Medved Taiga",
       needZones: [
         "03:00-07:00;Feeding",
-        "07:00-11:00;Resting",
-        "11:00-15:00;Resting",
-        "15:00-19:00;Resting",
+        "07:00-19:00;Resting",
         "19:00-23:00;Feeding",
         "23:00-03:00;Drinking",
       ],
@@ -32,9 +28,7 @@ export default {
       name: "Hirschfelden",
       needZones: [
         "03:00-07:00;Feeding",
-        "07:00-11:00;Resting",
-        "11:00-15:00;Resting",
-        "15:00-19:00;Resting",
+        "07:00-19:00;Resting",
         "19:00-23:00;Feeding",
         "23:00-03:00;Drinking",
       ],
