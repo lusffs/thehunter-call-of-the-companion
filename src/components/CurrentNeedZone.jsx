@@ -1,9 +1,12 @@
 import React from "react";
 
 import Typography from "@material-ui/core/Typography";
-
+import Grid from "@material-ui/core/Grid";
 import useStore from "global-hook-store";
 import huntingMateStore from "store/huntingMate";
+
+import NeedZoneIcon from "components/NeedZoneIcon";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
 export default function CurrentNeedZone({ animal, reserve }) {
   const {
@@ -45,9 +48,17 @@ export default function CurrentNeedZone({ animal, reserve }) {
   const nextStatus = needZones[nextIndex].split(";");
 
   return (
-    <Typography variant="body2">
-      {`${status[1]} (${status[0]}) ➡ `}
-      <i>{nextStatus[1]}</i>
-    </Typography>
+    <Grid container alignItems="center">
+      <NeedZoneIcon status={status[1]} />
+      <Typography
+        variant="body2"
+        component="span"
+        style={{ marginLeft: "0.5em", fontWeight: "bold" }}
+      >
+        {`${status[0].split("-")[0]} - ${status[0].split("-")[1]}`}
+      </Typography>
+      <ArrowRightIcon fontSize="small" />
+      <NeedZoneIcon status={nextStatus[1]} />
+    </Grid>
   );
 }

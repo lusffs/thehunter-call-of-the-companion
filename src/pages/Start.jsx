@@ -26,9 +26,26 @@ export default function Start() {
             theHunter
           </Typography>
           <Typography variant="h4">Call of the Companion</Typography>
-          <Box mx={3} mt={2} component={Paper} p={2}>
+          <Box
+            mx={3}
+            mt={2}
+            component={Paper}
+            p={2}
+            className={classes.startHuntBoxRoot}
+          >
+            <Typography variant="body1">Select your reserve.</Typography>
             <div>
               <ReserveSelection />
+            </div>
+            <div>
+              <Button
+                color="secondary"
+                variant="outlined"
+                size="large"
+                fullWidth
+              >
+                Sync the time!
+              </Button>
             </div>
             <div>
               <Button
@@ -85,5 +102,8 @@ const useStyles = makeStyles(() => ({
     flexDirection: "column",
     justifyContent: "center",
     textAlign: "center",
+  },
+  startHuntBoxRoot: {
+    textAlign: "left",
   },
 }));

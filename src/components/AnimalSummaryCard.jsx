@@ -9,12 +9,39 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import SpeedIcon from "@material-ui/icons/Speed";
+import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 
 import useStore from "global-hook-store";
 import settingsStore from "store/settings";
 import huntingMateStore from "store/huntingMate";
 
 import CurrentNeedZone from "components/CurrentNeedZone";
+
+const levelDescription = (level) => {
+  switch (level) {
+    case 1:
+      return "Trivial";
+    case 2:
+      return "";
+    case 3:
+      return "Very Easy";
+    case 4:
+      return "";
+    case 5:
+      return "Medium";
+    case 6:
+      return "";
+    case 7:
+      return "";
+    case 8:
+      return "";
+    case 9:
+      return "Legendary";
+    default:
+      return "";
+  }
+};
 
 const useStyles = makeStyles(({ palette, breakpoints }) => ({
   root: {
@@ -39,6 +66,9 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   },
   flip: {
     transform: "scaleY(-1)",
+  },
+  marginLeft: {
+    marginLeft: "0.5em",
   },
 }));
 
@@ -95,7 +125,7 @@ export default function AnimalSummaryCard({ animal, reserve }) {
                 >
                   <span
                     className={classes.pointer}
-                    onClick={handleCollapseToggle}
+                    onClick={handleMoreInfoClick}
                   >
                     {animal.name}
                   </span>
@@ -106,6 +136,14 @@ export default function AnimalSummaryCard({ animal, reserve }) {
                   size="small"
                   color="default"
                   edge="start"
+                  onClick={handleMoreInfoClick}
+                >
+                  <MoreHorizIcon />
+                </IconButton>
+                <IconButton
+                  size="small"
+                  color="default"
+                  edge="end"
                   onClick={handleCollapseToggle}
                 >
                   <ExpandLessIcon
@@ -113,14 +151,6 @@ export default function AnimalSummaryCard({ animal, reserve }) {
                       collapsed ? classes.flip : ""
                     }`}
                   />
-                </IconButton>
-                <IconButton
-                  size="small"
-                  color="default"
-                  edge="end"
-                  onClick={handleMoreInfoClick}
-                >
-                  <MoreHorizIcon />
                 </IconButton>
               </Grid>
             </Grid>
@@ -136,16 +166,30 @@ export default function AnimalSummaryCard({ animal, reserve }) {
                   <Grid className={classes.grow} item>
                     <Grid container direction="column">
                       <Grid item>
-                        <Typography variant="body2">
-                          <b>{"Max weight:"}</b>
-                          {renderWeight(animal.maxWeight)}
-                        </Typography>
+                        <Grid container alignItems="center">
+                          <SpeedIcon fontSize="small" />
+                          <Typography
+                            variant="body2"
+                            component="span"
+                            className={classes.marginLeft}
+                          >
+                            <b>{renderWeight(animal.maxWeight)}</b>
+                          </Typography>
+                        </Grid>
                       </Grid>
                       <Grid item>
-                        <Typography variant="body2">
-                          <b>{"Max level:"}</b>
-                          {` ${animal.maxLevel}`}
-                        </Typography>
+                        <Grid container alignItems="center">
+                          <DoubleArrowIcon fontSize="small" />
+                          <Typography
+                            variant="body2"
+                            component="span"
+                            className={classes.marginLeft}
+                          >
+                            <b>{`${animal.maxLevel} - ${levelDescription(
+                              animal.maxLevel
+                            )}`}</b>
+                          </Typography>
+                        </Grid>
                       </Grid>
                     </Grid>
                   </Grid>
@@ -162,7 +206,7 @@ export default function AnimalSummaryCard({ animal, reserve }) {
                             <span role="img" aria-label="Diamond">
                               💎
                             </span>{" "}
-                            {animal.trophyScore.diamond}
+                            {animal.trophyScore.diamond.toFixed(1)}
                           </b>
                         </Typography>
                       </Grid>

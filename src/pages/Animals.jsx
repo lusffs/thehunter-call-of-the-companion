@@ -11,6 +11,12 @@ import Typography from "@material-ui/core/Typography";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import SpeedIcon from "@material-ui/icons/Speed";
+import HotelIcon from "@material-ui/icons/Hotel";
+import RestaurantIcon from "@material-ui/icons/Restaurant";
+import LocalDrinkIcon from "@material-ui/icons/LocalDrink";
+import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
+// import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
 
 import useStore from "global-hook-store";
 import huntingMateStore from "store/huntingMate";
@@ -86,6 +92,35 @@ export default function Start() {
                   </MenuItem>
                 </Select>
               </FormControl>
+              <Typography gutterBottom variant="h6">
+                Legend
+              </Typography>
+              <Typography variant="body2">
+                <HotelIcon />
+                {"Resting"}
+              </Typography>
+              <Typography variant="body2">
+                <RestaurantIcon />
+                {"Feeding"}
+              </Typography>
+              <Typography variant="body2">
+                <LocalDrinkIcon />
+                {"Drinking"}
+              </Typography>
+              <Typography variant="body2">
+                <SpeedIcon />
+                {"Max weight"}
+              </Typography>
+              <Typography variant="body2">
+                <DoubleArrowIcon />
+                {"Max level"}
+              </Typography>
+              <Typography variant="body2">
+                <span role="img" aria-label="Diamond">
+                  💎
+                </span>
+                {"Diamond trophy rating"}
+              </Typography>
             </Box>
           </Grid>
           <Grid item xs={12} md={8}>
