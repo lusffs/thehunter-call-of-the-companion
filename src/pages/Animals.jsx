@@ -13,10 +13,10 @@ import FormControl from "@material-ui/core/FormControl";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import SpeedIcon from "@material-ui/icons/Speed";
 import HotelIcon from "@material-ui/icons/Hotel";
+import ExploreIcon from "@material-ui/icons/Explore";
 import RestaurantIcon from "@material-ui/icons/Restaurant";
 import LocalDrinkIcon from "@material-ui/icons/LocalDrink";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
-// import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
 
 import useStore from "global-hook-store";
 import huntingMateStore from "store/huntingMate";
@@ -108,6 +108,10 @@ export default function Start() {
                 {"Drinking"}
               </Typography>
               <Typography variant="body2">
+                <ExploreIcon />
+                {"No Need zone"}
+              </Typography>
+              <Typography variant="body2">
                 <SpeedIcon />
                 {"Max weight"}
               </Typography>
@@ -164,7 +168,7 @@ export default function Start() {
                   });
                   return reserves && reserves.indexOf(selectedReserve) > -1;
                 })
-                .map((animal, index) => (
+                .map((animal) => (
                   <AnimalSummaryCard
                     key={animal._id}
                     animal={animal}

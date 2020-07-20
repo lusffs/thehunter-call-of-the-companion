@@ -38,6 +38,8 @@ const levelDescription = (level) => {
       return "";
     case 9:
       return "Legendary";
+    case 10:
+      return "Fabled";
     default:
       return "";
   }
