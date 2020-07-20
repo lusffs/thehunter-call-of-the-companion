@@ -4,7 +4,7 @@ export default {
   name: "Musk Deer",
   maxLevel: 3,
   callers: [],
-  scents: [],
+  scents: ["Musk Deer Scent"],
   reserves: [
     {
       name: "Medved Taiga",

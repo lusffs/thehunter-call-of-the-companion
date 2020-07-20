@@ -4,7 +4,7 @@ export default {
   name: "Mule Deer",
   maxLevel: 5,
   callers: ['Deer "Bleat" Caller'],
-  scents: [],
+  scents: ["Mule Deer Scent"],
   reserves: [
     {
       name: "Silver Ridge Peaks",

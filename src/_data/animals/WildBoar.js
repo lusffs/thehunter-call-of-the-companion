@@ -4,7 +4,7 @@ export default {
   name: "Wild Boar",
   maxLevel: 5,
   callers: ["Wild Boar Caller"],
-  scents: [],
+  scents: ["Wild Boar Scent"],
   reserves: [
     {
       name: "Cuatro Colinas",

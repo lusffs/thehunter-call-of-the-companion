@@ -4,7 +4,7 @@ export default {
   name: "Rocky Mountain Elk",
   maxLevel: 5,
   callers: ["Elk Caller"],
-  scents: [],
+  scents: ["Elk Scent"],
   reserves: [
     {
       name: "Silver Ridge Peaks",

@@ -4,7 +4,7 @@ export default {
   name: "Moose",
   maxLevel: 5,
   callers: ["Moose Caller"],
-  scents: [],
+  scents: ["Moose Scent"],
   reserves: [
     {
       name: "Yukon Valley",

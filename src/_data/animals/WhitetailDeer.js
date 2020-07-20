@@ -8,7 +8,7 @@ export default {
     'Deer "Bleat" Caller',
     'Deer "Grunt" Caller',
   ],
-  scents: [],
+  scents: ["Whitetail Deer Scent"],
   reserves: [
     {
       name: "Layton Lakes",

@@ -4,7 +4,7 @@ export default {
   name: "Red Deer",
   maxLevel: 9,
   callers: ["Red Deer Caller"],
-  scents: [],
+  scents: ["Red Deer Scent"],
   reserves: [
     {
       name: "Cuatro Colinas",
