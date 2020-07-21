@@ -10,14 +10,14 @@ import TimerOffIcon from "@material-ui/icons/TimerOff";
 
 import TimeSync from "./TimeSync";
 import useStore from "global-hook-store";
-import settingsStore from "store/settings";
+import siteStore from "store/siteStore";
 import huntingMateStore from "store/huntingMate";
 
 export default function FormDialog() {
   const {
     state: { timeSyncModalOpen },
     actions: { setTimeSyncModalOpen },
-  } = useStore(settingsStore);
+  } = useStore(siteStore);
 
   const {
     state: { isActive },

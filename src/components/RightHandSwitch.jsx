@@ -5,13 +5,13 @@ import Switch from "@material-ui/core/Switch";
 import Typography from "@material-ui/core/Typography";
 
 import useStore from "global-hook-store";
-import settingsStore from "store/settings";
+import siteStore from "store/siteStore";
 
 export default function RightHandSwitch() {
   const {
     state: { isRightHanded },
     actions: { toggleRightHanded },
-  } = useStore(settingsStore);
+  } = useStore(siteStore);
 
   const toggleChecked = () => {
     toggleRightHanded();

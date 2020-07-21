@@ -13,37 +13,12 @@ import SpeedIcon from "@material-ui/icons/Speed";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 
 import useStore from "global-hook-store";
-import settingsStore from "store/settings";
-import huntingMateStore from "store/huntingMate";
+import siteStore from "store/siteStore";
 
 import CurrentNeedZone from "components/CurrentNeedZone";
 
-const levelDescription = (level) => {
-  switch (level) {
-    case 1:
-      return "Trivial";
-    case 2:
-      return "";
-    case 3:
-      return "Very Easy";
-    case 4:
-      return "";
-    case 5:
-      return "Medium";
-    case 6:
-      return "";
-    case 7:
-      return "";
-    case 8:
-      return "";
-    case 9:
-      return "Legendary";
-    case 10:
-      return "Fabled";
-    default:
-      return "";
-  }
-};
+import levelDescription from "utils/levelDescription";
+import formatWeight from "utils/formatWeight";
 
 const useStyles = makeStyles(({ palette, breakpoints }) => ({
   root: {
@@ -80,24 +55,12 @@ export default function AnimalSummaryCard({ animal, reserve }) {
   const [collapsed, setCollapsed] = useState(false);
 
   const {
-    state: { useKiloWeightUnit },
-  } = useStore(huntingMateStore);
-
-  const {
     actions: { setAnimalInfoModalOpen, setAnimalInfoSelectedAnimal },
-  } = useStore(settingsStore);
+  } = useStore(siteStore);
 
   if (!animal) {
     return null;
   }
-
-  const renderWeight = (weight) => {
-    const w = useKiloWeightUnit ? weight.kg : weight.lbs;
-    if (w) {
-      return ` ${w} ${useKiloWeightUnit ? "kg" : "lbs"}`;
-    }
-    return null;
-  };
 
   const handleMoreInfoClick = () => {
     setAnimalInfoSelectedAnimal(animal).then(() => {
@@ -175,7 +138,7 @@ export default function AnimalSummaryCard({ animal, reserve }) {
                             component="span"
                             className={classes.marginLeft}
                           >
-                            <b>{renderWeight(animal.maxWeight)}</b>
+                            <b>{formatWeight(animal.maxWeight)}</b>
                           </Typography>
                         </Grid>
                       </Grid>

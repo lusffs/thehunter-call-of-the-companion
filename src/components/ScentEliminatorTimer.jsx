@@ -16,7 +16,7 @@ export default function ScentEliminatorTimer() {
 
   const {
     state: { scentEliminatorSyncTime },
-    actions: { setScentCoverTimer },
+    actions: { setScentEliminatorTimer },
   } = useStore(huntingMateStore);
 
   React.useEffect(() => {
@@ -40,14 +40,14 @@ export default function ScentEliminatorTimer() {
 
         if (totalLeft < 1) {
           clearInterval(interval);
-          setScentCoverTimer(null);
+          setScentEliminatorTimer(null);
           setSnackBarOpen(true);
         }
       }, 500);
     }
 
     return () => clearInterval(interval);
-  }, [scentEliminatorSyncTime, setScentCoverTimer, setSnackBarOpen]);
+  }, [scentEliminatorSyncTime, setScentEliminatorTimer, setSnackBarOpen]);
 
   return (
     <>
@@ -55,7 +55,7 @@ export default function ScentEliminatorTimer() {
         color="inherit"
         onClick={() => {
           setTimeLeft("30:00");
-          setScentCoverTimer(new Date().getTime());
+          setScentEliminatorTimer(new Date().getTime());
         }}
       >
         <BathtubIcon />

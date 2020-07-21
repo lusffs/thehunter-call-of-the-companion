@@ -14,7 +14,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import useStore from "global-hook-store";
-import settingsStore from "store/settings";
+import siteStore from "store/siteStore";
 const Link = require("react-router-dom").Link;
 
 export default function Menu() {
@@ -24,7 +24,7 @@ export default function Menu() {
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const {
     state: { isRightHanded },
-  } = useStore(settingsStore);
+  } = useStore(siteStore);
 
   const toggleDrawer = (open) => (event) => {
     if (

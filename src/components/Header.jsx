@@ -17,7 +17,7 @@ import Settings from "components/Settings";
 
 import useStore from "global-hook-store";
 import huntingMateStore from "store/huntingMate";
-import settingsStore from "store/settings";
+import siteStore from "store/siteStore";
 import ScentEliminatorTimer from "./ScentEliminatorTimer";
 
 export default function Header() {
@@ -28,7 +28,7 @@ export default function Header() {
 
   const {
     actions: { setTimeSyncModalOpen },
-  } = useStore(settingsStore);
+  } = useStore(siteStore);
 
   return (
     <>

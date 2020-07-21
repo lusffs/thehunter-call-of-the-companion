@@ -11,42 +11,14 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 
 import useStore from "global-hook-store";
 import AnimalReserves from "components/AnimalReserves";
-import huntingMateStore from "store/huntingMate";
-import settingsStore from "store/settings";
 
-const levelDescription = (level) => {
-  switch (level) {
-    case 1:
-      return "Trivial";
-    case 2:
-      return "";
-    case 3:
-      return "Very Easy";
-    case 4:
-      return "";
-    case 5:
-      return "Medium";
-    case 6:
-      return "";
-    case 7:
-      return "";
-    case 8:
-      return "";
-    case 9:
-      return "Legendary";
-    case 10:
-      return "Fabled";
-    default:
-      return "";
-  }
-};
+import siteStore from "store/siteStore";
+
+import levelDescription from "utils/levelDescription";
+import formatWeight from "utils/formatWeight";
 
 export default function AnimalInfoDialog() {
   const classes = useStyles();
-
-  const {
-    state: { useKiloWeightUnit },
-  } = useStore(huntingMateStore);
 
   const {
     state: {
@@ -54,15 +26,7 @@ export default function AnimalInfoDialog() {
       animalInfoSelectedAnimal: selectedAnimal,
     },
     actions: { setAnimalInfoModalOpen: setDialogOpen },
-  } = useStore(settingsStore);
-
-  const renderWeight = (weight) => {
-    const w = useKiloWeightUnit ? weight.kg : weight.lbs;
-    if (w) {
-      return ` ${w} ${useKiloWeightUnit ? "kg" : "lbs"}`;
-    }
-    return null;
-  };
+  } = useStore(siteStore);
 
   return (
     <>
@@ -86,7 +50,7 @@ export default function AnimalInfoDialog() {
               </Typography>
               <Divider className={classes.divider} />
               <Typography variant="body1">
-                <b>Max Weight:</b> {renderWeight(selectedAnimal.maxWeight)}
+                <b>Max Weight:</b> {formatWeight(selectedAnimal.maxWeight)}
               </Typography>
               <Divider className={classes.divider} />
               <Typography variant="body1">
@@ -103,7 +67,7 @@ export default function AnimalInfoDialog() {
                   </Typography>
                   <Typography variant="body2">
                     <b>Max Weight:</b>{" "}
-                    {renderWeight(selectedAnimal.fabled.maxWeight)}
+                    {formatWeight(selectedAnimal.fabled.maxWeight)}
                   </Typography>
                   <Typography variant="body2">
                     <b>Max Level:</b>{" "}

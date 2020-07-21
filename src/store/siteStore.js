@@ -12,7 +12,6 @@ export default createStore(
       ...state,
       isRightHanded: !state.isRightHanded,
     }),
-
     setTimeSyncModalOpen: (state, timeSyncModalOpen) => ({
       ...state,
       timeSyncModalOpen,

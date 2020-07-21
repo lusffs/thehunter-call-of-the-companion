@@ -34,6 +34,7 @@ export default function AnimalReserves({ animalReserves }) {
           <Accordion
             key={index}
             expanded={expanded === reserve.name}
+            elevation={1}
             onChange={handleChange(reserve.name)}
           >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>

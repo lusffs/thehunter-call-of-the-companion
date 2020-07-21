@@ -12,7 +12,7 @@ import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 import useStore from "global-hook-store";
 
 import animals from "_data/animals";
-import settingsStore from "store/settings";
+import siteStore from "store/siteStore";
 import backgroundImage from "assets/images/background2.jpg";
 
 const firstLetters = animals.reduce((accumulator, animal) => {
@@ -31,7 +31,7 @@ export default function AnimalFinder() {
 
   const {
     actions: { setAnimalInfoModalOpen, setAnimalInfoSelectedAnimal },
-  } = useStore(settingsStore);
+  } = useStore(siteStore);
 
   const handleMoreInfoClick = (animal) => {
     setAnimalInfoSelectedAnimal(animal).then(() => {

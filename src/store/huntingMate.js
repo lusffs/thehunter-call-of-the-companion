@@ -26,7 +26,7 @@ export default createStore(
         0
       ),
     }),
-    setScentCoverTimer: (state, scentEliminatorSyncTime) => ({
+    setScentEliminatorTimer: (state, scentEliminatorSyncTime) => ({
       ...state,
       scentEliminatorSyncTime,
     }),
