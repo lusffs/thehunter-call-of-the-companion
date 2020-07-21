@@ -9,52 +9,41 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import useStore from "global-hook-store";
 import huntingMateStore from "store/huntingMate";
 
-import reserves from "_data/reserves";
-
-export default function ReserveSelection() {
-  const classes = useStyles();
-
-  const {
-    state: { selectedReserve },
-    actions: { setSelectedReserve },
-  } = useStore(huntingMateStore);
-
-  const handleReserveChange = (event) => {
-    setSelectedReserve(event.target.value);
-  };
-
-  return (
-    <FormControl variant="outlined" className={classes.formControl}>
-      <InputLabel id="selected-reserve-label" color="secondary">
-        Selected Reserve
-      </InputLabel>
-      <Select
-        labelId="selected-reserve-label"
-        id="selected-reserve"
-        value={selectedReserve}
-        onChange={handleReserveChange}
-        label="Selected Reserve"
-        displayEmpty
-        color="secondary"
-      >
-        <MenuItem value="all">
-          <em>All reserves</em>
-        </MenuItem>
-        {reserves.map((reserve, index) => {
-          return (
-            <MenuItem key={index} value={reserve}>
-              {reserve}
-            </MenuItem>
-          );
-        })}
-      </Select>
-    </FormControl>
-  );
-}
-
 const useStyles = makeStyles(({ spacing }) => ({
   formControl: {
     width: "100%",
     marginBottom: spacing(2),
   },
 }));
+
+export default function RightHandSwitch() {
+  const classes = useStyles();
+
+  const {
+    state: { weightUnit },
+    actions: { setWeightUnit },
+  } = useStore(huntingMateStore);
+
+  const handleWeightUnitChange = (e) => {
+    setWeightUnit(e.target.value);
+  };
+
+  return (
+    <FormControl variant="outlined" className={classes.formControl}>
+      <InputLabel id="selected-reserve-label" color="secondary">
+        Selected weight unit
+      </InputLabel>
+      <Select
+        labelId="selected-reserve-label"
+        id="selected-reserve"
+        value={weightUnit}
+        onChange={handleWeightUnitChange}
+        label="Selected weight unit"
+        color="secondary"
+      >
+        <MenuItem value="kg">Kilo</MenuItem>
+        <MenuItem value="lbs">Pounds</MenuItem>
+      </Select>
+    </FormControl>
+  );
+}

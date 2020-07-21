@@ -19,6 +19,9 @@ const useStyles = makeStyles(({ palette, spacing }) => ({
       cursor: "pointer",
     },
   },
+  timeDisplay: {
+    backgroundColor: palette.grey[300],
+  },
   active: {
     color: palette.text.hint,
     textDecoration: "underline",
@@ -101,7 +104,7 @@ export default function TimeSync({ onClose }) {
     <>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper>
+          <Paper className={classes.timeDisplay}>
             <Typography variant="h2" color="textPrimary" align="center">
               <span
                 className={

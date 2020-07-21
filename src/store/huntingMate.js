@@ -7,7 +7,7 @@ export default createStore(
     clientSyncTime: null,
     inGameSyncTime: null,
     scentEliminatorSyncTime: null,
-    useKiloWeightUnit: true,
+    weightUnit: "kg",
     selectedReserve: "all",
   },
   {
@@ -42,9 +42,9 @@ export default createStore(
       ...state,
       selectedReserve,
     }),
-    toggleWeightUnit: (state) => ({
+    setWeightUnit: (state, weightUnit) => ({
       ...state,
-      useKiloWeightUnit: !state.useKiloWeightUnit,
+      weightUnit,
     }),
   }
 );

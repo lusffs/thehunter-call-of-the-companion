@@ -11,7 +11,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import DialogContentText from "@material-ui/core/DialogContentText";
 
-import WeightSwitch from "components/WeightSwitch";
+import WeightUnitSelection from "components/WeightUnitSelection";
 import RightHandSwitch from "components/RightHandSwitch";
 import ReserveSelection from "components/ReserveSelection";
 
@@ -54,11 +54,10 @@ export default function FormDialog() {
               </DialogContentText>
             </>
           )}
-          <WeightSwitch />
-          <DialogContentText>Weight in kg instead of lbs</DialogContentText>
-          <div>
-            <ReserveSelection />
-          </div>
+          <WeightUnitSelection />
+
+          <ReserveSelection />
+
           <Button
             onClick={() => {
               localStorage.clear();
