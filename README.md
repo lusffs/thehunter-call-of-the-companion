@@ -52,7 +52,7 @@ Create a fresh build `yarn build` and run `source-map-explorer ./build/static/js
 
 Setup cerificates with `certbot certonly --webroot -w /var/www/cotw.studiolus.com/public_html/ -d cotw.studiolus.com`
 
-Renew certificates with `certbot renew`
+Renew certificates with `certbot renew` `sudo certbot renew --cert-name cotw.studiolus.com -w /var/www/cotw.studiolus.com/public_html/`
 
 https://pimylifeup.com/raspberry-pi-ssl-lets-encrypt/
 
