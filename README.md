@@ -54,6 +54,8 @@ Setup cerificates with `certbot certonly --webroot -w /var/www/cotw.studiolus.co
 
 Renew certificates with `certbot renew` `sudo certbot renew --cert-name cotw.studiolus.com -w /var/www/cotw.studiolus.com/public_html/`
 
+reboot nginx `sudo nginx -s reload`
+
 https://pimylifeup.com/raspberry-pi-ssl-lets-encrypt/
 
 https://certbot.eff.org/lets-encrypt/pip-nginx
