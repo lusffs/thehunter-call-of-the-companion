@@ -163,7 +163,7 @@ export default function AnimalSummaryCard({ animal, reserve }) {
                       className={classes.fullHeight}
                       container
                       direction="column"
-                      justify="flex-end"
+                      justifyContent="flex-end"
                     >
                       <Grid item>
                         <Typography variant="body1" align="right">

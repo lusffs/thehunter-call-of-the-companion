@@ -2,7 +2,6 @@ import React from "react";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import makeStyles from "@material-ui/core/styles/makeStyles";
 import SpeedIcon from "@material-ui/icons/Speed";
 import HotelIcon from "@material-ui/icons/Hotel";
 import ExploreIcon from "@material-ui/icons/Explore";
@@ -10,10 +9,7 @@ import RestaurantIcon from "@material-ui/icons/Restaurant";
 import LocalDrinkIcon from "@material-ui/icons/LocalDrink";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 
-const useStyles = makeStyles(() => ({}));
-
 export default function Legend() {
-  const classes = useStyles();
 
   const renderItem = (icon, name) => {
     return (

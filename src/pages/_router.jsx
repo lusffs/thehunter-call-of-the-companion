@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
@@ -11,20 +11,13 @@ export default function PageRouter() {
   const classes = useStyles();
   return (
     <Grid item xs={12} className={classes.root}>
-      <Switch>
-        <Route path="/animals">
-          <AnimalsPage />
-        </Route>
-        <Route path="/animal-finder">
-          <AnimalFinder />
-        </Route>
-        <Route exact path="/">
-          <StartPage />
-        </Route>
-        <Route path="/*">
-          <h1>404</h1>
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/animals" element={<AnimalsPage />} />
+        <Route path="/animal-finder" element={<AnimalFinder/>} />
+        <Route exact path="/" element={<StartPage />} />
+        <Route path="/*" element={<h1>404</h1>} />
+        
+      </Routes>
     </Grid>
   );
 }

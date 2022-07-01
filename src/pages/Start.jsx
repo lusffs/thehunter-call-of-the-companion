@@ -13,9 +13,15 @@ import ReserveSelection from "components/ReserveSelection";
 
 import backgroundImage from "assets/images/background.jpg";
 import LogoIcon from "assets/images/logo192.png";
+import siteStore from "store/siteStore";
+import useStore from "global-hook-store";
 
 export default function Start() {
   const classes = useStyles();
+
+  const {
+    actions: { setTimeSyncModalOpen },
+  } = useStore(siteStore);
 
   return (
     <>
@@ -33,15 +39,16 @@ export default function Start() {
             p={2}
             className={classes.startHuntBoxRoot}
           >
-            <Typography variant="body1">Select your reserve.</Typography>
             <div>
               <ReserveSelection />
             </div>
             <div>
               <Button
+                className={classes.syncTimeBox}
                 color="secondary"
                 variant="outlined"
                 size="large"
+                onClick={setTimeSyncModalOpen}
                 fullWidth
               >
                 Sync the time!
@@ -102,6 +109,9 @@ const useStyles = makeStyles(() => ({
     flexDirection: "column",
     justifyContent: "center",
     textAlign: "center",
+  },
+  syncTimeBox: {
+    marginBottom: "16px"
   },
   startHuntBoxRoot: {
     textAlign: "left",
